@@ -529,6 +529,7 @@ collect and execute</strong> those, respectively.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="alert-triangle"></i>
 </div>
+<span class="callout-header">Caution</span>
 <div id="reproducibility-note" class="callout-inner">
 <h3 class="callout-title">Reproducibility Note</h3>
 <div class="callout-content">
@@ -559,8 +560,8 @@ tables and CSV files.</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussion</span>
 <div class="callout-inner">
-<h3 class="callout-title">Discussion</h3>
 <div class="callout-content">
 <p>Consider your own workflows on an HPC system. What individual steps
 are involved? Please discuss this in groups.</p>
@@ -599,6 +600,7 @@ such as <a href="https://spack.io/" class="external-link">Spack</a> and <a href=
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Challenge</span>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
@@ -637,8 +639,8 @@ any name, but for the sake of this lesson, we will use
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Workflow automation aids in getting reproducible results.</li>
@@ -704,7 +706,7 @@ analysis.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>We use GROMACS for this example, as it is a known code in the HPC
 community, it is readily available, and from installation to execution
@@ -781,6 +783,7 @@ for the build in the output above.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div id="reproducibility-note" class="callout-inner">
 <h3 class="callout-title">Reproducibility Note</h3>
 <div class="callout-content">
@@ -989,8 +992,8 @@ inputs,</div>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussion</span>
 <div class="callout-inner">
-<h3 class="callout-title">Discussion</h3>
 <div class="callout-content">
 <p>What other types of preparation can you think of? Which prior step
 before execution does your application need?</p>
@@ -1002,7 +1005,7 @@ before execution does your application need?</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> List of potential initial discussion points </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <ul>
 <li>Copying an input to a specific directory</li>
@@ -1017,8 +1020,8 @@ before execution does your application need?</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>HPC applications may need to be downloaded and built before use</li>
@@ -1283,6 +1286,7 @@ sets</em>. Let’s define a minimal set of parameters for our initial
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div id="naming-conventions" class="callout-inner">
 <h3 class="callout-title">Naming conventions</h3>
 <div class="callout-content">
@@ -1507,8 +1511,8 @@ parametersets.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>The different states of a JUBE workflow can be <code>running</code>
@@ -1583,8 +1587,8 @@ compiling GROMACS, we can define two different steps:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussion</span>
 <div class="callout-inner">
-<h3 class="callout-title">Discussion</h3>
 <div class="callout-content">
 <p>Why don’t we have more or less steps defined?</p>
 </div>
@@ -1622,7 +1626,7 @@ should be part of the same step.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-XML" class="tab-pane show active" aria-labelledby="nav-tab-1-XML" role="tabpanel">
+<div id="nav-tabpanel-1-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-XML">
 <p>Create an XML configuration for a GROMACS workflow with the name
 <code>gromacs.xml</code> with the following configuration.</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -1653,7 +1657,7 @@ should be part of the same step.</p>
 <span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>&lt;/<span class="kw">jube</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-YAML" class="tab-pane" aria-labelledby="nav-tab-1-YAML" role="tabpanel">
+<div id="nav-tabpanel-1-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-YAML">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1714,7 +1718,7 @@ for key variables in your workflow, to make this more flexible.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-XML" class="tab-pane show active" aria-labelledby="nav-tab-2-XML" role="tabpanel">
+<div id="nav-tabpanel-2-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-XML">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1750,7 +1754,7 @@ for key variables in your workflow, to make this more flexible.</p>
 <span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a>&lt;/<span class="kw">jube</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-2-YAML" class="tab-pane" aria-labelledby="nav-tab-2-YAML" role="tabpanel">
+<div id="nav-tabpanel-2-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-YAML">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1800,8 +1804,8 @@ safety net.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="alert-triangle"></i>
 </div>
+<span class="callout-header">Caution</span>
 <div class="callout-inner">
-<h3 class="callout-title">Caution</h3>
 <div class="callout-content">
 <p>The sandboxing of individual workflow runs and their workpackages is
 done for good reason: to limit potential interactions among independent
@@ -1821,8 +1825,8 @@ the location of the workflow specification.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Find a full list of internal variables set by JUBE in <a href="https://apps.fz-juelich.de/jsc/jube/docu/glossar.html#term-jube_variables" class="external-link">the
 glossary of JUBE’s documentation</a>.</p>
@@ -1849,7 +1853,7 @@ installations accidentially.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-XML" class="tab-pane show active" aria-labelledby="nav-tab-3-XML" role="tabpanel">
+<div id="nav-tabpanel-3-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-XML">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1888,7 +1892,7 @@ installations accidentially.</p>
 <span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a>&lt;/<span class="kw">jube</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-3-YAML" class="tab-pane" aria-labelledby="nav-tab-3-YAML" role="tabpanel">
+<div id="nav-tabpanel-3-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-YAML">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1963,8 +1967,8 @@ build step.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Group actions that belong together and have a 1:1 relation ship in a
@@ -2043,14 +2047,14 @@ different version of the software.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-XML" class="tab-pane show active" aria-labelledby="nav-tab-1-XML" role="tabpanel">
+<div id="nav-tabpanel-1-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-XML">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_version"</span>&gt;2024.1&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-YAML" class="tab-pane" aria-labelledby="nav-tab-1-YAML" role="tabpanel">
+<div id="nav-tabpanel-1-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-YAML">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2071,7 +2075,7 @@ version of the GROMACS software.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>You can demonstrate the workflow run and showcase that the new
 archive was downloaded, and the software eventually installed in a
@@ -2108,7 +2112,7 @@ workflow run.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-XML" class="tab-pane show active" aria-labelledby="nav-tab-2-XML" role="tabpanel">
+<div id="nav-tabpanel-2-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-XML">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2116,7 +2120,7 @@ workflow run.</p>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"var"</span>&gt;two&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-2-YAML" class="tab-pane" aria-labelledby="nav-tab-2-YAML" role="tabpanel">
+<div id="nav-tabpanel-2-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-YAML">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2163,14 +2167,14 @@ definitions:</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-XML" class="tab-pane show active" aria-labelledby="nav-tab-3-XML" role="tabpanel">
+<div id="nav-tabpanel-3-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-XML">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"var"</span><span class="ot"> tag=</span><span class="st">"a,!b,c"</span>&gt;...&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-3-YAML" class="tab-pane" aria-labelledby="nav-tab-3-YAML" role="tabpanel">
+<div id="nav-tabpanel-3-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-YAML">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2186,6 +2190,7 @@ over the <code>a</code>.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Challenge</span>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
@@ -2200,7 +2205,7 @@ default the version 2024.5 is chosen, but in the presense of the tag
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-4" class="nav nav-tabs" role="tablist">
@@ -2216,7 +2221,7 @@ default the version 2024.5 is chosen, but in the presense of the tag
 </button>
 </div>
 </nav><div id="nav-tabContent-4" class="tab-content">
-<div id="nav-tabpanel-4-XML" class="tab-pane show active" aria-labelledby="nav-tab-4-XML" role="tabpanel">
+<div id="nav-tabpanel-4-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-4-XML">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2224,7 +2229,7 @@ default the version 2024.5 is chosen, but in the presense of the tag
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_version"</span><span class="ot"> tag=</span><span class="st">"v2024.1"</span>&gt;2024.1&gt;/parameter&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-4-YAML" class="tab-pane" aria-labelledby="nav-tab-4-YAML" role="tabpanel">
+<div id="nav-tabpanel-4-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-4-YAML">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2260,7 +2265,7 @@ command line when running a workflow.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-5" class="tab-content">
-<div id="nav-tabpanel-5-XML" class="tab-pane show active" aria-labelledby="nav-tab-5-XML" role="tabpanel">
+<div id="nav-tabpanel-5-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-5-XML">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2304,7 +2309,7 @@ command line when running a workflow.</p>
 <span id="cb12-33"><a href="#cb12-33" tabindex="-1"></a>&lt;/<span class="kw">jube</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-5-YAML" class="tab-pane" aria-labelledby="nav-tab-5-YAML" role="tabpanel">
+<div id="nav-tabpanel-5-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-5-YAML">
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2348,8 +2353,8 @@ command line when running a workflow.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Use tags to include or exclude specific parts of a workflow.</li>
@@ -2408,8 +2413,8 @@ to <code>hello</code>, the other one set to <code>world</code>.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>JUBE allows for values containing the <code>,</code> (comma)
 character by specifying the separator manually for specific
@@ -2428,14 +2433,14 @@ parameters.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-XML">
+<div id="nav-tabpanel-1-XML" class="tab-pane show active" aria-labelledby="nav-tab-1-XML" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"myparam"</span><span class="ot"> separator=</span><span class="st">";"</span>&gt;1,2,3,4&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-YAML">
+<div id="nav-tabpanel-1-YAML" class="tab-pane" aria-labelledby="nav-tab-1-YAML" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2464,7 +2469,7 @@ parameters containing comma-separated values.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-XML">
+<div id="nav-tabpanel-2-XML" class="tab-pane show active" aria-labelledby="nav-tab-2-XML" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2472,7 +2477,7 @@ parameters containing comma-separated values.</p>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"threads"</span>&gt;1,2,4&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-2-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-YAML">
+<div id="nav-tabpanel-2-YAML" class="tab-pane" aria-labelledby="nav-tab-2-YAML" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2530,6 +2535,7 @@ multiple compute nodes, with different process to thread ratios.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussion</span>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
@@ -2547,7 +2553,7 @@ socket (i.e., an even number of processes per node).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>With the constraints above, a configuration has</p>
 <ol style="list-style-type: decimal">
@@ -2570,7 +2576,7 @@ of the parameters based on others.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-XML">
+<div id="nav-tabpanel-3-XML" class="tab-pane show active" aria-labelledby="nav-tab-3-XML" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2581,7 +2587,7 @@ of the parameters based on others.</p>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"threads_per_process"</span><span class="ot"> mode=</span><span class="st">"python"</span>&gt;int(${cores_per_node}/${processes})&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-3-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-YAML">
+<div id="nav-tabpanel-3-YAML" class="tab-pane" aria-labelledby="nav-tab-3-YAML" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2608,8 +2614,8 @@ inputs or different combinations of arguments to the simulation.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Comma-separated values in parameter definition are tokenized and
@@ -2697,7 +2703,7 @@ substitution.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-XML" class="tab-pane show active" aria-labelledby="nav-tab-1-XML" role="tabpanel">
+<div id="nav-tabpanel-1-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-XML">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2705,7 +2711,7 @@ substitution.</p>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  &lt;<span class="kw">sub</span><span class="ot"> source=</span><span class="st">"DYNAMIC_VAR_B#"</span><span class="ot"> dest=</span><span class="st">"$param_b"</span> /&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-YAML" class="tab-pane" aria-labelledby="nav-tab-1-YAML" role="tabpanel">
+<div id="nav-tabpanel-1-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-YAML">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2735,7 +2741,7 @@ same text replacements to all files listed.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-XML" class="tab-pane show active" aria-labelledby="nav-tab-2-XML" role="tabpanel">
+<div id="nav-tabpanel-2-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-XML">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2745,7 +2751,7 @@ same text replacements to all files listed.</p>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>&lt;/<span class="kw">substituteset</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-2-YAML" class="tab-pane" aria-labelledby="nav-tab-2-YAML" role="tabpanel">
+<div id="nav-tabpanel-2-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-YAML">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2769,8 +2775,8 @@ to the workpackage of a given step.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="alert-triangle"></i>
 </div>
+<span class="callout-header">Caution</span>
 <div class="callout-inner">
-<h3 class="callout-title">Caution</h3>
 <div class="callout-content">
 <p>Linking files may reduce redundancy, especially if large read-only
 files and directories are involved in the workflow. However, keep in
@@ -2797,7 +2803,7 @@ combination of copy and link commands that suits the workflow best.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-XML" class="tab-pane show active" aria-labelledby="nav-tab-3-XML" role="tabpanel">
+<div id="nav-tabpanel-3-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-XML">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2807,7 +2813,7 @@ combination of copy and link commands that suits the workflow best.</p>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>&lt;/<span class="kw">fileset</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-3-YAML" class="tab-pane" aria-labelledby="nav-tab-3-YAML" role="tabpanel">
+<div id="nav-tabpanel-3-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-YAML">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2825,8 +2831,8 @@ combination of copy and link commands that suits the workflow best.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Copy and link clauses can also specify additional attributes, such as
 <code>source_dir</code> and <code>target_dir</code> to specify a path to
@@ -2855,8 +2861,8 @@ generation of batch scripts using the above steps.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Filesets let you easily copy templates into the workpackage
@@ -2934,7 +2940,7 @@ file as part of a step definition.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-XML" class="tab-pane show active" aria-labelledby="nav-tab-1-XML" role="tabpanel">
+<div id="nav-tabpanel-1-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-XML">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2965,7 +2971,7 @@ file as part of a step definition.</p>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>&lt;/<span class="kw">step</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-YAML" class="tab-pane" aria-labelledby="nav-tab-1-YAML" role="tabpanel">
+<div id="nav-tabpanel-1-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-YAML">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3009,8 +3015,8 @@ values that need changing.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Next to tagging, this is another way to change the value of a
 configuration entity in JUBE.</p>
@@ -3031,7 +3037,7 @@ configuration entity in JUBE.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-XML" class="tab-pane show active" aria-labelledby="nav-tab-2-XML" role="tabpanel">
+<div id="nav-tabpanel-2-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-XML">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3048,7 +3054,7 @@ configuration entity in JUBE.</p>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>&lt;/<span class="kw">step</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-2-YAML" class="tab-pane" aria-labelledby="nav-tab-2-YAML" role="tabpanel">
+<div id="nav-tabpanel-2-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-YAML">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3086,8 +3092,8 @@ on that.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>
@@ -3313,8 +3319,8 @@ latter is a template for the corresponding scheduler.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>By specifying the path corresponding to your scheduler as part of the
 environment variable <code>JUBE_INCLUDE_PATH</code>, you can make both
@@ -3499,8 +3505,8 @@ in.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Checkout further substitution patterns available in the batch script
 template to identify parameters you can use to add commands to your
@@ -3515,8 +3521,8 @@ needs or fully rely on self-provided configurations.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>JUBE provides a default job script template for different
@@ -3576,8 +3582,8 @@ step.</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
+<span class="callout-header">Prerequisite</span>
 <div class="callout-inner">
-<h3 class="callout-title">Prerequisite</h3>
 <div class="callout-content">
 <p>If you cannot execute GROMACS via the generated batch script to
 generate an output, you can down load an example error log <a href="../files/job.err">job.err</a> and place it in the work directory of
@@ -3612,6 +3618,7 @@ better fit the generated table.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussion</span>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
@@ -3627,7 +3634,7 @@ parse for meaningful data.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <ul>
 <li>The <a href="../files/cmake_configure.log"><code>cmake_configure.log</code></a> in
@@ -3737,8 +3744,8 @@ matching operator</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>While all <strong>steps</strong> of a JUBE workflow need to be
 defined before the workflow is started and cannot be altered after that,
@@ -3957,6 +3964,7 @@ specification.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussion</span>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
@@ -3982,7 +3990,7 @@ executed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-5" class="nav nav-tabs" role="tablist">
@@ -4107,8 +4115,8 @@ executed.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Each table has a separate file in the <code>result/</code> directory
 with its <em>name</em> as is name and the extension
@@ -4122,8 +4130,8 @@ with its <em>name</em> as is name and the extension
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>JUBE allows for definition of patterns to retrieve values from a
@@ -4185,8 +4193,8 @@ ways to record them during execution of the workflow.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussion</span>
 <div class="callout-inner">
-<h3 class="callout-title">Discussion</h3>
 <div class="callout-content">
 <p>Which aspects of the build and measurement steps should be recorded
 to increase reproducibility of the workflow?</p>
@@ -4229,6 +4237,7 @@ to increase reproducibility of the workflow?</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussion</span>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
@@ -4294,8 +4303,8 @@ checked for validity</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>
@@ -4395,8 +4404,8 @@ workpackages have completed up to that point.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Key Points</span>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>JUBE is a very flexible workflow management system.</li>
@@ -4435,7 +4444,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.12" class="external-link">sandpaper (0.16.12)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.6" class="external-link">varnish (1.0.6)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.17.1" class="external-link">sandpaper (0.17.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.7" class="external-link">varnish (1.0.7)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -4458,8 +4467,8 @@ any links that you are not going to use.
   "url": "https://mahermanns.github.io/jube-novice/instructor/aio.html",
   "identifier": "https://mahermanns.github.io/jube-novice/instructor/aio.html",
   "dateCreated": "2025-06-27",
-  "dateModified": "2025-08-05",
-  "datePublished": "2025-08-05"
+  "dateModified": "2025-08-12",
+  "datePublished": "2025-08-12"
 }
 
   </script><script>
