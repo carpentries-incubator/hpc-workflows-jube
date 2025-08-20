@@ -35,7 +35,7 @@ We use GROMACS for this example, as it is a known code in the HPC community, it 
 ### Downloading GROMACS
 
 While many HPC systems provide GROMACS installations for different versions,
-this lesson will use
+this lesson will show how to compile GROMACS as part of the overall workflow.
 Eventually, downloading GROMACS will be part of the overall HPC workflow, but
 you can download the 2024.5 version of GROMACS manually from the [download page of GROMACS][gromacs-download].
 
