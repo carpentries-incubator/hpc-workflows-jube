@@ -32,12 +32,12 @@ Which aspects of the build and measurement steps should be recorded to increase 
 Potential aspects that merit recording:
 
 - For general workflow execution
- - Build flags used to generate binaries
- - Versions of software and libraries used
- - Input files and configuration
- - Output files
- - Execution scale and domain decomposition
- - ...
+  - Build flags used to generate binaries
+  - Versions of software and libraries used
+  - Input files and configuration
+  - Output files
+  - Execution scale and domain decomposition
+  - ...
 - For performance measurements (additionally to the ones above)
   - Networking libraries involved
   - Configuration of networking library
