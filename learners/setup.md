@@ -32,7 +32,7 @@ It is best practice to have a special session for software setup prior to the ac
 
 ### Conda
 
-The `environment.yaml` file describes a Conda virtual environment that includes JUBE: the tool you'll need to run this lesson, as well as some depencencies.
+The [`environment.yaml`](files/environment.yaml) file describes a Conda virtual environment that includes JUBE: the tool you'll need to run this lesson, as well as some depencencies.
 To prepare the environment, [install Miniconda following the official instructions][miniconda-install].
 Then download the file [environment.yaml](files/environment.yaml), which contains
 all necessary Python packages for this course.
