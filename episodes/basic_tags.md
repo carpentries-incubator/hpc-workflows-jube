@@ -21,7 +21,7 @@ exercises: 2
 Now that we transferred our initial workflow to a JUBE configuration, we would
 like to extend this to work with other versions of GROMACS as well.
 
-Fortunately, all names in the URL and archive follow the same convension, and
+Fortunately, all names in the URL and archive follow the same convention, and
 we have already separated the values involved into the proper parameters.
 So now, we can modify our GROMACS workflow to use a different version of the
 software.
@@ -57,13 +57,13 @@ downloaded, and the software eventually installed in a different directory.
 :::
 
 Now, we might not want to modify our configuration every time directly if we
-want to compare runs of two different versions, or comment in or our specific
-lines in our parametersets.
+want to compare runs of two different versions, or comment in or out specific
+lines in our parameter sets.
 
 ## Uniqueness of parameters
 
 Parameters in JUBE have to be globally unique.
-That means now two different parametersets are allowed to define a parameter of
+That means no two different parameter sets are allowed to define a parameter of
 the same name.
 
 However, if several parameter definitions for the same name exist, the last
@@ -101,7 +101,7 @@ In the presence of tags,
 2. Any entity with a `tag` attribute and the value of the attribute defined,
    will be retained in the workflow.
 3. Any entity with a `tag` attribute and the value of the attribute not
-   defined, will be removed in the workflow.
+   defined, will be removed from the workflow.
 
 Tag attributes are also allowed to be comma-separated lists of tag names.
 A specification of `!` (exclamation mark) in front of a tag name will invert
@@ -154,8 +154,8 @@ is chosen, but in the presense of the tag `v2024.1` the version 2024.1.
 
 ### Using tags to enable a forced rebuild
 
-Using the `tag` functionality, we can add a second definintion of the `build_gromacs` parameter with a *rebuild* tag to the workflow specification to
-force JUBE to rebuild of GROMACS just by adding the *rebuild* tag on the command line when running a workflow.
+Using the `tag` functionality, we can add a second definition of the `build_gromacs` parameter with a *rebuild* tag to the workflow specification to
+force JUBE to rebuild GROMACS just by adding the *rebuild* tag on the command line when running a workflow.
 
 ::: group-tab
 
@@ -173,7 +173,7 @@ jube-workflow$ nano gromacs.xml
   </benchmark>
   <parameterset name="gromacs_pset">
     <parameter name="gromacs_version">2024.5</parameter>
-    <parameter name="gromacs_sources">gromacs-$gromacs_version</parameterrameter>
+    <parameter name="gromacs_sources">gromacs-$gromacs_version</parameter>
     <parameter name="gromacs_archive">$gromacs_sources.tar.gz</parameter>
     <parameter name="gromacs_source_dir">$jube_benchmark_home/source</parameter>
     <parameter name="gromacs_baseurl">https://ftp.gromacs.org/gromacs/</parameter>

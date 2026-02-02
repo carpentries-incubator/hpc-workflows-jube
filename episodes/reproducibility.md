@@ -20,7 +20,7 @@ exercises: 15
 
 JUBE in itself does **not** make every workflow definition inherently reproducible.
 However, all parts of a workflow definition and parameter evaluation are recorded and retained during workflow execution.
-To increase reproducibility of a workflow, it's the user's repsonsibility to identify all aspects of a workflow and define ways to record them during execution of the workflow.
+To increase reproducibility of a workflow, it's the user's responsibility to identify all aspects of a workflow and define ways to record them during execution of the workflow.
 
 ::::::::::::::::::::::::::::: discussion
 
@@ -54,10 +54,10 @@ Select one or more of the aspects identified in the prior discussion and specify
 ::::::::::::::::::::::::::::::::
 :::::::::::::::::::::: hint
 
-Here are some examples on how to record some reproducibility-relevant aspacts of your workflow
+Here are some examples on how to record some reproducibility-relevant aspects of your workflow
 
 - Build flags can either be specified directly or tried to be extracted from generated build files (e.g., Makefiles)
-- Versions of software and dependent librariess should be a mix of specified and extracted
+- Versions of software and dependent libraries should be a mix of specified and extracted
   - **Note**: It can be difficult to identify the corresponding versions of linked libraries if they didn't record this information
 - Output files are a natural part of the run directory
 - Scale and specifics of execution can easily be defined as a parameter and used to generate input and run files

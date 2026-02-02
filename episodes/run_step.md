@@ -24,18 +24,19 @@ exercises: 5
 The commands in the `do` clauses so far, were all synchronous.
 This means that the effect of the specified command is observable after the command completed.
 For example a `mkdir -p my_dir` will return after the directory `my_dir` is created.
-JUBE will continue execution of the next `do` clause defined in the step of complete the step.
+JUBE will continue execution of the next `do` clause defined in the step.
 
-HPC systems however are used differently than personal computers.
+HPC systems, however, are used differently than personal computers.
 To ensure the resources are used fairly and efficiently, work is handed to a
-scheduler to allocate resources for the job.
-However, those resources may not be available right away.
-The scheduler therefore does not block the command, but rather return to the user and handles
-the job without further interaction of the user.
+scheduler, which allocates resources for the job.
+Because those resources may not be available right immediately,
+the scheduler does not block the command; instead it rather returns control to the user and handles
+the job without requiring any further interaction of the user.
 
-This means, however, the effect of the job script (a completed application run) will most likely not have materialized when the command return and JUBE shoud wait for it before continuing execution of the next `do` clause.
+However, this means that the effect of the job script (i.e., a completed application run) will most likely not have materialized by the time the command returns.
+Therefore, JUBE should wait for it before continuing execution of the next `do` clause.
 JUBE handles such asynchronous behavior via the `done_file` attribute of the `do` clause.
-If specified, JUBE will not assume the successful execution of the specified command in the `do` clause for completion, but the existence of the the file specified in `done_file` as a side effect of the `do` command.
+If specified, JUBE will not assume the successful execution of the command specified in the `do` clause for completion, but rather the existence of the file specified in `done_file` as a side effect of the `do` command.
 
 This way, JUBE does not need to understand the details of the asynchronous command specified, as long as the command eventually generates the file specified in `done_file`.
 For HPC systems and batch jobs, this can be exploited by generating a file as part of the batch job, if the application ran successfully as part of the batch job.
@@ -99,7 +100,7 @@ Running workpackages (#=done, 0=wait, E=error):
 ```
 
 Any workpackage with a pending `done_file` will be listed under `wait` in the table of open tasks.
-To try to advance any waiting workpackage the user needs to needs the `continue` command, as listed in the output given by JUBE.
+In order to advance any waiting workpackage, the user needs to needs to use the `continue` command, as listed in the output given by JUBE.
 
 ```sh
 $ jube continue jube_run --id 24
@@ -136,7 +137,7 @@ Running workpackages (#=done, 0=wait, E=error):
 ### Platform-independent workflows
 
 JUBE offers batch job templates compatible with a variety of batch systems that utilize this mechanism.
-These files are available in the JUBE installation directory unter `share/jube/platform`, with subdirectories per scheduler.
+These files are available in the JUBE installation directory under `share/jube/platform`, with subdirectories per scheduler.
 Provided with version 2.7.1 of JUBE are files prepared for **LSF**, **Moab**, **PBS**, and **SLURM**.
 
 In each of these directories JUBE provides at least the two files `platform.xml` and `submit.job.in`.
@@ -150,7 +151,7 @@ $ export JUBE_INCLUDE_PATH=/path/to/your/jube/base/share/jube/platform/slurm:$JU
 ```
 :::::::::::::::::::::::::
 
-Taking a look into the batch script template reveils the semingly automatic handling of generating either an `error` or a `ready` file as part of the batch job.
+Taking a look into the batch script template reveals the seemingly automatic handling of generating either an `error` or a `ready` file as part of the batch job.
 
 ```sh
 ...
@@ -165,19 +166,19 @@ fi
 If the return code is not 0 (zero), the action specified by the substitution parameter #FLAG_ERROR# is executed, and the script exits with the corresponding non-zero return code.
 At the end of the batch script, the substitution parameter #FLAG# will generate the specified file.
 
-If we take a look into the corresponding substitution set in `platform.xml`, we can see te following configuration.
+If we take a look into the corresponding substitution set in `platform.xml`, we can see the following configuration.
 ```xml
 <sub source="#FLAG#" dest="touch $done_file" />
 <sub source="#FLAG_ERROR#" dest="touch $error_file" />
 ```
-as well as the corresponding the parameterset `executeset` in `platform.xml` contains the definition of
+as well as the corresponding parameter set `executeset` in `platform.xml`, which contains the definition of
 `done_file` and `error_file`.
 ```xml
 <parameter name="done_file">ready</parameter>
 <parameter name="error_file">error</parameter>
 ```
 
-Using these pre-defined sets in `platform.xml` in combination with the batch script template, we can easily create the *run* step for GROMACS.
+Using these predefined sets in `platform.xml` in combination with the batch script template, we can easily create the *run* step for GROMACS.
 
 :::::::::::: group-tab
 ### XML
@@ -283,7 +284,7 @@ step:
 ```
 ::::::::::::::::::::::
 
-Using the indirecttion of the corresponding sets in the `platform.xml` we now have a workflow specification that does not in itself reference any specific scheduler, as that is handled via the `JUBE_INCLUDE_PATH` from the shell JUBE is executed in.
+Using the indirection of the corresponding sets in the `platform.xml` we now have a workflow specification that does not in itself reference any specific scheduler, as that is handled via the `JUBE_INCLUDE_PATH` from the shell JUBE is executed in.
 
 :::::::::::::::: callout
 Checkout further substitution patterns available in the batch script template to identify parameters you can use to add commands to your batch script.

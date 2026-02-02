@@ -18,7 +18,7 @@ exercises: 5
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-HPC systems provide large computational resources to support researchers with their computational projects.
+HPC systems provide researchers with large computational resources to support their computational projects.
 Such applications come in many different forms and sizes.
 Some need to be compiled, before they can be used.
 Some are pre-installed on the HPC system.
@@ -47,16 +47,16 @@ $ wget https://ftp.gromacs.org/gromacs/gromacs-2024.5.tar.gz
 
 ### Building GROMACS
 
-GROMACS is a C++ application that uses the CMake build system generator
-automatic generation of a Makefile, enabling easy configuration and building of
-the software.
+GROMACS is a C++ application that uses the CMake build system generator to
+automatically generate a Makefile. This enables users to easily configure and
+build the software.
 
 As a C++ application, it needs to be compiled into a binary before it can be
 executed. This is called *building* the application.
 
 CMake enables so-called "out-of-source" builds, which means all files generated
 during the build process stay separate from the source files of GROMACS.
-For this, we generate a build directory in the
+For this, we generate a build directory in the parent directory of `sources/`.
 
 ```sh
 $ cd sources
@@ -85,7 +85,7 @@ $ cmake -S sources/gromacs-2024.5/ -B build_gromacs -DGMX_MPI=ON
 
 This first step is called the *configuration* step.
 During this step CMake checks different parameters of the build environment and
-creates build systems files accordingly.
+creates build system files accordingly.
 This configuration step **reveals information** that may prove **important for
 reproducibility** later on, such as the compiler version used for the build in
 the output above.
@@ -94,11 +94,11 @@ the output above.
 
 ### Reproducibility Note
 
-While information about the build process is extremely important for
-**reproducible performance** measurements (i.e., benchmarking), it may also
-prove important for **reproducible results** when identifying sources for non-bitidentical results.
-Results are called bitidentical when two different executions of an
-application produce results that have the exact same bit pattern.
+While information about the build process is crucial for
+**reproducible performance** measurements (i.e., benchmarking), it can also
+be important for achieving **reproducible results** when identifying the causes of non-bitidentical results.
+Results are referred to as *bitidentical* when two different executions of an
+application produce results with the same exact bit pattern.
 
 :::
 
@@ -218,15 +218,17 @@ $ cmake --install build_gromacs --prefix install/gromacs-2024.5
 -- Installing: /home/mh269604/jube-workspace/install/gromacs-2024.5/share/man/man1/gmx-mdrun.1
 ```
 
-After adding the `bin/` subdirectory of the install path to your `PATH`
-environment variable, GROMACS is ready to be used.
+After installation, GROMACS provides a configuration script that takes care of
+setting environment variables and adding the executables to the `PATH`.
+You should 'source' the script corresponding to your shell before using
+GROMACS.
 
 ```sh
-$ export PATH=install/gromacs-2024.5/bin:$PATH
+$ source install/gromacs-2024.5/bin/GMXRC.bash  # file extension should match your $SHELL
 $ which gmx
 ```
 ```output
-install/gromacs-2024.5/bin/gmx
+<path/to/your/installation>/install/gromacs-2024.5/bin/gmx
 ```
 
 ## Preparing the input
@@ -243,8 +245,8 @@ The provided input package for this lesson has three different inputs.
 | [MD_10NM_WATER.tpr](data/MD_10NM_WATER.tpr) |  10 nm |        98319 |           1 ns |
 | [MD_15NM_WATER.tpr](data/MD_15NM_WATER.tpr) |  15 nm |       325995 |           1 ns |
 
-The simulation domain is a three-dimensional box with a given side length.
-This means its size grows cubicly with its side length.
+The simulation domain is a three-dimensional box with fixed side lengths.
+This means that its size increases cubically with the length of its sides.
 To accomodate for a similar amount of work across the three inputs the number
 of atoms in each input roughly corresponds to the overall volume of the
 simulation box.
@@ -275,11 +277,11 @@ execution does your application need?
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- HPC applications may need to be downloaded and built before use
+- HPC applications may need to be downloaded and built before use.
 - HPC applications may have additional dependencies.
 - HPC applications often do not have an automatic dependency management system (like `pip` or `conda`).
-- HPC applications may need serial preparation of inputs
-- steps of individual HPC workflows may occur at different levels of parallelism
+- HPC applications may need serial preparation of inputs.
+- Steps of individual HPC workflows may occur at different levels of parallelism.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

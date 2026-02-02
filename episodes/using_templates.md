@@ -5,12 +5,12 @@ exercises: 0
 ---
 
 ::::::::::::::: questions
-- How do I generate dynamic text-based input files for my workflow.
-- How do I create batch scripts for by workflow.
+- How do I generate dynamic text-based input files for my workflow?
+- How do I create batch scripts for by workflow?
 :::::::::::::::::::::::::
 
 ::::::::::::::: objectives
-- Create simple text-based templates generate files based on parameter settings.
+- Create simple text-based templates to generate files based on parameter settings.
 ::::::::::::::::::::::::::
 
 ::::::::::::::::: instructor
@@ -19,7 +19,7 @@ This episode introduces the simple text-based substitution system of JUBE to cre
 
 In HPC workflows, oftentimes input files or batch scripts need to be created.
 While some parts of these files are specific to the current workflow running, the files either have a static structure and/or even largely static content.
-To handle this, JUBE provides a mechanism of generating text files based on search and replace strategy.
+To handle this, JUBE provides a mechanism to generate text files based on a search and replace strategy.
 
 ## Substitutions
 
@@ -65,7 +65,7 @@ substituteset:
 
 ## File sets
 
-To make the substitutions more independent, JUBE provides so called *file sets*.
+To make the substitutions more independent, JUBE provides so-called *file sets*.
 These are a collection of clauses describing that either a file or directory should be *copied* or *linked* to the workpackage of a given step.
 
 :::::::::::: caution

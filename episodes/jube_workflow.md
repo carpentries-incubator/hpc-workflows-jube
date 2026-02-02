@@ -76,7 +76,7 @@ Running workpackages (#=done, 0=wait, E=error):
 
 ## Query the status of a workflow
 
-To check whether a run with a given id if finished or not, you can use the `jube status` command. Oviously, the workflow you just executed is finished.
+You can use the `jube status` command to check whether a run with a given ID has finished or not. Obviously, the workflow you just ran has finished.
 
 ```sh
 $ jube status --id 0
@@ -87,9 +87,9 @@ FINISHED
 
 ## Defining a workflow
 
-With no *steps* defined, the workflow will immediatley complete without specific actions executed, other than file JUBE-internal handling of the run and creation of corresponding directories and files.
+With no *steps* defined, the workflow will immediately complete without specific actions executed, other than file JUBE-internal handling of the run and creation of corresponding directories and files.
 
-Looking into the benchmark output directory created, we will see somethin that will look similar to the following stucture:
+Looking into the benchmark output directory created, we will see something that will look similar to the following structure:
 
 ```sh
 $ tree bench_run        # the tree command provides a nice tree for the directory structure
@@ -172,10 +172,10 @@ parameterset:
 
 ## Naming conventions
 
-Several entities defined in the specification are later **used** by its name in the step definitions.
+Several entities defined in the specification are later **used** by their name in the step definitions.
 To make it easier to understand more complex configurations, it is good practice to encode the type of the entity into its name, for example as a suffix, such as `_pset`, `_files`, `_sub`, `_pat`.
 As steps themselves are the highest level entity and never used by other steps,
-you donot need to name them with a special suffix.
+you do not need to name them with a special suffix.
 
 ::: group-tab
 
@@ -217,7 +217,7 @@ Here are some suggestions for suffixes according to their type:
 |---------------|---------:|
 | Fileset       | `_files` |
 | Parameterset  |  `_pset` |
-| Patterset     |   `_pat` |
+| Patternset    |   `_pat` |
 | Substituteset |   `_sub` |
 
 ::::::
@@ -225,7 +225,7 @@ Here are some suggestions for suffixes according to their type:
 ## Defining workflow steps
 
 The only reason to define parameters in the first place is to *use* them in the execution of actions in your workflow steps.
-To do this, the keyword `use`, referencing the name of a parameter set, is needed in the step definintion.
+In order to achieve this, the keyword 'use', referencing the name of a parameter set, is needed in the step definition.
 Actions are defined using the `do` keyword and should be standard shell
 commands (including arguments).
 Parameters can be referenced using the `$` prefix to its name and are replaced
@@ -301,24 +301,22 @@ step:
 
 :::
 
-Steps in a workflow that depend on prior steps in the workflow are only
-executed once the corresponding dependent step has executed successfully.
+Steps in a workflow are only executed once all preceding steps they depend on were executed successfully.
 
 ## Running a workflow
 
 A JUBE workflow is started by the `run` command, putting this workflow into the
 `running` state.
 For each defined step, individual workpackages are created with a specific instance of parameter values.
-Any defined tasks
 When no *asynchronous* tasks are defined (See [Running an
-application](../episodes/run_step.md)) the steps will be processes until all workpackages are completed.
+application](../episodes/run_step.md)) the steps will be processes until all workpackages have been completed.
 
 ![The JUBE workflow with `run`,
 `continue`, `analysis`, and `result` commands.](fig/JUBE_Workflow.svg){alt='The JUBE workflow with `run`,
 `continue`, `analysis`, and `result` commands.' width='100%'}
 
 A JUBE workflow is initiated with the `run` command. At that time, the first
-step will create workpackages based on the use parametersets.
+step will create workpackages based on the use parameter sets.
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints
@@ -330,7 +328,7 @@ step will create workpackages based on the use parametersets.
 - If JUBE exits with completion of asynchronous tasks still pending, the user needs to call `jube continue` to check for their completion and further running of dependent workflow steps until overall completion is achieved.
 - The user can analyze output and print results at any time.
 - Comma-separated values in parameter definition are tokenized and create individual workpackages.
-  Using multiple comma-separated values for parameters enables easy creation of
+  Using multiple comma-separated values for parameters makes it easy to create
   parameter spaces.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
