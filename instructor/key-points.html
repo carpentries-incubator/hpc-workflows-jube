@@ -449,22 +449,23 @@
 systems.</li>
 <li>JUBE simplifies exploration of a large parameter space of
 measurements.</li>
-<li>JUBE automatically isolates individual workpackages of a run in
+<li>JUBE automatically isolates the individual workpackages of a run in
 separate directories steps to avoid individual concurrent workpackages
 to overwrite or unintentional reuse of intermediate data.</li>
-<li>JUBE does not intrinsically create fully reproducible workflows, but
-the user has to manually record any parameters that make the workflow
+<li>JUBE does not inherently generate fully reproducible workflows, but
+users can manually record any settings that make the workflow
 reproducible.</li>
 </ul></section><section id="benchmark_example"><h2 class="section-heading"><a href="benchmark_example.html">An example application</a></h2>
 <hr class="half-width">
 <ul>
-<li>HPC applications may need to be downloaded and built before use</li>
+<li>HPC applications may need to be downloaded and built before
+use.</li>
 <li>HPC applications may have additional dependencies.</li>
 <li>HPC applications often do not have an automatic dependency
 management system (like <code>pip</code> or <code>conda</code>).</li>
-<li>HPC applications may need serial preparation of inputs</li>
-<li>steps of individual HPC workflows may occur at different levels of
-parallelism</li>
+<li>HPC applications may need serial preparation of inputs.</li>
+<li>Steps of individual HPC workflows may occur at different levels of
+parallelism.</li>
 </ul></section><section id="jube_workflow"><h2 class="section-heading"><a href="jube_workflow.html">Working with JUBE</a></h2>
 <hr class="half-width">
 <ul>
@@ -482,14 +483,15 @@ completion is achieved.</li>
 <li>The user can analyze output and print results at any time.</li>
 <li>Comma-separated values in parameter definition are tokenized and
 create individual workpackages. Using multiple comma-separated values
-for parameters enables easy creation of parameter spaces.</li>
+for parameters makes it easy to create parameter spaces.</li>
 </ul></section><section id="initial_step"><h2 class="section-heading"><a href="initial_step.html">An initial workflow specification</a></h2>
 <hr class="half-width">
 <ul>
 <li>Group actions that belong together and have a 1:1 relation ship in a
 single step.</li>
-<li>Basing parameter values on other parameter values can help code copy
-and increase flexibility and maintainability of your workflow.</li>
+<li>Basing parameter values on other parameter values avoids code
+duplication and increases flexibility and maintainability of your
+workflow.</li>
 <li>You can generate build files from templates using dynamic values
 from parameter sets.</li>
 </ul></section><section id="basic_tags"><h2 class="section-heading"><a href="basic_tags.html">Influencing parameters with tags</a></h2>
@@ -536,12 +538,11 @@ files by the asynchronous task to continue.</li>
 </ul></section><section id="output_analysis_presentation"><h2 class="section-heading"><a href="output_analysis_presentation.html">Output analysis and presentation</a></h2>
 <hr class="half-width">
 <ul>
-<li>JUBE allows for definition of patterns to retrieve values from a
-workflow step.</li>
-<li>Patterns can be defined as regular expressions or Python
+<li>JUBE allows for the definition of patterns enabling the user to
+retrieve values from a workflow step.</li>
+<li>Patterns can be defined as either regular expressions or Python
 expressions.</li>
-<li>JUBE allows for the generate of pretty-printed tables and CSV
-format.</li>
+<li>JUBE can generate pretty-printed and CSV-formatted tables.</li>
 </ul></section><section id="reproducibility"><h2 class="section-heading"><a href="reproducibility.html">Thoughts on reproducibility</a></h2>
 <hr class="half-width">
 <ul>
@@ -586,7 +587,7 @@ Perl expressions.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.18.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.4" class="external-link">sandpaper (0.18.4)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -608,9 +609,9 @@ Perl expressions.</li>
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/jube-novice/instructor/key-points.html",
   "identifier": "https://carpentries-incubator.github.io/jube-novice/instructor/key-points.html",
-  "dateCreated": "2026-01-28",
-  "dateModified": "2026-01-28",
-  "datePublished": "2026-01-28"
+  "dateCreated": "2026-02-02",
+  "dateModified": "2026-02-02",
+  "datePublished": "2026-02-02"
 }
 
   </script><script>

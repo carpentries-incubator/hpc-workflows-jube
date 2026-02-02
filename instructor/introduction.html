@@ -374,7 +374,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction</h1>
-        <p>Last updated on 2025-06-24 |
+        <p>Last updated on 2026-02-02 |
 
         <a href="https://github.com/carpentries-incubator/jube-novice/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -395,7 +395,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How can I run an HPC workflow reproducibly?</li>
+<ul><li>How can I run an HPC workflow in a reproducible way?</li>
 <li>What is the easiest way to create a scaling experiment for an HPC
 application?</li>
 <li>How do I identify the optimal runtime configuration for an
@@ -420,7 +420,7 @@ JUBE.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>The primary goal of this session is to present potential use cases
 for JUBE and enable participants to apply these insights to their own
@@ -436,19 +436,20 @@ application-specific workflow as well as platform-specific
 configurations. The objective of this lesson is to enable users of HPC
 systems to run performance measurements with minimal intervention with
 high reproducibility, using the <a href="https://apps.fz-juelich.de/jsc/jube/docu/index.html" class="external-link">Jülich
-Benchemarking Environment (JUBE)</a> [1].</p>
-<p>It is important to understand that JUBE, while emerged as a
-benchmarking system, actually is a workflow management system, where
-application and system benchmarking is one of its applications. Further
-use cases may include running multiple HPC workflows as integration
-tests during application development and defining reproducible execution
-workflows for data generation for publications.</p>
+Benchmarking Environment (JUBE)</a> [1].</p>
+<p>It is important to understand that, although JUBE emerged as a
+benchmarking system, it actually is a workflow management system, where
+application and system benchmarking is one of its potential uses.
+Further use cases may include running multiple HPC workflows as
+integration tests during application development and defining
+reproducible execution workflows for data generation for
+publications.</p>
 <div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
   <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
 <div class="accordion-body">
 <p>It is important for the learners to understand that JUBE itself
 <strong>does know what makes your workflow reproducible on its
@@ -468,10 +469,10 @@ collect and execute</strong> those, respectively.</p>
 <div id="reproducibility-note" class="callout-inner">
 <h3 class="callout-title">Reproducibility Note</h3>
 <div class="callout-content">
-<p>JUBE is an automation tool. That means, it <strong>does not</strong>
-intrinsicly make your workflows reproducible, but it <strong>lets you
-automate</strong> all actions that can make your workflow
-reproducible.</p>
+<p>JUBE is an automation tool. This means that it <strong>does
+not</strong> intrinsically make your workflows reproducible; rather, it
+<strong>enables you to automate</strong> all the actions that could make
+your workflow reproducible.</p>
 </div>
 </div>
 </div>
@@ -481,7 +482,7 @@ reproducible.</p>
 control various aspects of the execution.</li>
 <li>It allows for custom workflows that can adapt to different HPC
 platforms.</li>
-<li>It provides a powerful tagging systems to influence execution of a
+<li>It provides a powerful tagging system to influence execution of a
 given workflow.</li>
 <li>It automatically isolates your workflow steps so concurrent tasks
 don’t overwrite or re-use files in unintentionally shared execution
@@ -506,7 +507,7 @@ are involved? Please discuss this in groups.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> List of potential discussion points </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Steps may include:</p>
 <ul><li>Loading and preparing the software environment</li>
@@ -522,9 +523,9 @@ are involved? Please discuss this in groups.</p>
 <p><a href="https://www.fz-juelich.de/jsc/jube/" class="external-link">JUBE</a> is written and
 maintained by the <a href="https://www.fz-juelich.de/jsc/" class="external-link">Jülich
 Supercomputing Centre</a> at <a href="https://www.fz-juelich.de/" class="external-link">Forschungszentrum Jülich</a> in
-Germany. It is written in Python 3, but is backwards-compatible to
-Python 2.x. The user can write configurations in XML or YAML syntax. It
-is freely <a href="https://www.fz-juelich.de/en/ias/jsc/services/user-support/software-tools/jube/download" class="external-link">available
+Germany. It is written in Python 3. Please use a Python 3 interpreter
+when working with it. The user can write configurations in XML or YAML
+syntax. It is freely <a href="https://www.fz-juelich.de/en/ias/jsc/services/user-support/software-tools/jube/download" class="external-link">available
 for download</a> and also available via HPC software package managers,
 such as <a href="https://spack.io/" class="external-link">Spack</a> and <a href="https://easybuild.io/" class="external-link">EasyBuild</a>.</p>
 <div id="challenge1" class="callout challenge">
@@ -545,7 +546,7 @@ lesson.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>It is best to start with an empty directory. You are free to choose
 any name, but for the sake of this lesson, we will use
@@ -578,11 +579,11 @@ any name, but for the sake of this lesson, we will use
 systems.</li>
 <li>JUBE simplifies exploration of a large parameter space of
 measurements.</li>
-<li>JUBE automatically isolates individual workpackages of a run in
+<li>JUBE automatically isolates the individual workpackages of a run in
 separate directories steps to avoid individual concurrent workpackages
 to overwrite or unintentional reuse of intermediate data.</li>
-<li>JUBE does not intrinsically create fully reproducible workflows, but
-the user has to manually record any parameters that make the workflow
+<li>JUBE does not inherently generate fully reproducible workflows, but
+users can manually record any settings that make the workflow
 reproducible.</li>
 </ul></div>
 </div>
@@ -632,7 +633,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.18.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.4" class="external-link">sandpaper (0.18.4)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -653,9 +654,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/jube-novice/instructor/introduction.html",
   "identifier": "https://carpentries-incubator.github.io/jube-novice/instructor/introduction.html",
-  "dateCreated": "2026-01-28",
-  "dateModified": "2025-06-24",
-  "datePublished": "2026-01-28"
+  "dateCreated": "2026-02-02",
+  "dateModified": "2026-02-02",
+  "datePublished": "2026-02-02"
 }
 
   </script><script>

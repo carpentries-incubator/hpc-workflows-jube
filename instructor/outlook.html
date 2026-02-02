@@ -383,7 +383,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Wrap-up and outlook</h1>
-        <p>Last updated on 2025-05-22 |
+        <p>Last updated on 2026-02-02 |
 
         <a href="https://github.com/carpentries-incubator/jube-novice/edit/main/episodes/outlook.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -431,7 +431,8 @@ uses of specific features come with experience with those features.</p>
 <p>Here is a list of some of the topics that could not be covered in
 this course</p>
 <ul><li>Running multiple iterations of a step</li>
-<li>Re-evaluating parameter values at different</li>
+<li>Re-evaluating parameter values at different times in the
+workflow</li>
 <li>More advanced combinations of parameter modes</li>
 <li>Advanced tagging with <code>duplicate</code> attribute for
 parameters</li>
@@ -443,16 +444,17 @@ parameters</li>
 </ul></section><section><h2 class="section-heading" id="challenges-with-jube-workflows">Challenges with JUBE workflows<a class="anchor" aria-label="anchor" href="#challenges-with-jube-workflows"></a></h2>
 <hr class="half-width"><p>The main challenge with JUBE workflows is the separation of analysis
 and result tables from workflow steps. This makes it hard to define
-additional steps that analyse output and create result tables.</p>
+additional steps that analyze output and create result tables.</p>
 <p>The easiest way to cope with this is to create additional scripts
-outside of the workflow that act on the created tables (e.g. creating
-plots, etc.). However, this is unsatisfying as the means part of our
-overall workflow (i.e., the generation of plots) is outside of the
-actual workflow specification and has to be done manually.</p>
+outside of the workflow that act on the created tables (e.g., creating
+plots, etc.). However, this is unsatisfactory because the generation of
+plots, which is part out our overarching workflow, is outside the scope
+of the actual JUBE workflow specification and has to be done
+manually.</p>
 <p>Another option is to have a second layer of workflow specifications
 where the execution of a JUBE workflow is a step in a parent workflow,
 also defined in JUBE. This way, the full workflow can be defined in
-JUBE, yet the additional layer add complexity overall.</p>
+JUBE, yet the additional layer adds complexity overall.</p>
 <p>Finally, as analyses can be performed and result tables created and
 updated while the workflow is not yet finished, another viable approach
 can be to add a <code>do</code> action with a <code>done_file</code> at
@@ -514,7 +516,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.18.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.4" class="external-link">sandpaper (0.18.4)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -535,9 +537,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/jube-novice/instructor/outlook.html",
   "identifier": "https://carpentries-incubator.github.io/jube-novice/instructor/outlook.html",
-  "dateCreated": "2026-01-28",
-  "dateModified": "2025-05-22",
-  "datePublished": "2026-01-28"
+  "dateCreated": "2026-02-02",
+  "dateModified": "2026-02-02",
+  "datePublished": "2026-02-02"
 }
 
   </script><script>

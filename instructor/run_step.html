@@ -374,7 +374,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Running an application</h1>
-        <p>Last updated on 2025-05-22 |
+        <p>Last updated on 2026-02-02 |
 
         <a href="https://github.com/carpentries-incubator/jube-novice/edit/main/episodes/run_step.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -419,22 +419,24 @@ synchronous. This means that the effect of the specified command is
 observable after the command completed. For example a
 <code>mkdir -p my_dir</code> will return after the directory
 <code>my_dir</code> is created. JUBE will continue execution of the next
-<code>do</code> clause defined in the step of complete the step.</p>
-<p>HPC systems however are used differently than personal computers. To
-ensure the resources are used fairly and efficiently, work is handed to
-a scheduler to allocate resources for the job. However, those resources
-may not be available right away. The scheduler therefore does not block
-the command, but rather return to the user and handles the job without
-further interaction of the user.</p>
-<p>This means, however, the effect of the job script (a completed
-application run) will most likely not have materialized when the command
-return and JUBE shoud wait for it before continuing execution of the
-next <code>do</code> clause. JUBE handles such asynchronous behavior via
-the <code>done_file</code> attribute of the <code>do</code> clause. If
-specified, JUBE will not assume the successful execution of the
-specified command in the <code>do</code> clause for completion, but the
-existence of the the file specified in <code>done_file</code> as a side
-effect of the <code>do</code> command.</p>
+<code>do</code> clause defined in the step.</p>
+<p>HPC systems, however, are used differently than personal computers.
+To ensure the resources are used fairly and efficiently, work is handed
+to a scheduler, which allocates resources for the job. Because those
+resources may not be available right immediately, the scheduler does not
+block the command; instead it rather returns control to the user and
+handles the job without requiring any further interaction of the
+user.</p>
+<p>However, this means that the effect of the job script (i.e., a
+completed application run) will most likely not have materialized by the
+time the command returns. Therefore, JUBE should wait for it before
+continuing execution of the next <code>do</code> clause. JUBE handles
+such asynchronous behavior via the <code>done_file</code> attribute of
+the <code>do</code> clause. If specified, JUBE will not assume the
+successful execution of the command specified in the <code>do</code>
+clause for completion, but rather the existence of the file specified in
+<code>done_file</code> as a side effect of the <code>do</code>
+command.</p>
 <p>This way, JUBE does not need to understand the details of the
 asynchronous command specified, as long as the command eventually
 generates the file specified in <code>done_file</code>. For HPC systems
@@ -479,7 +481,7 @@ clause would then look like so.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>&lt;<span class="kw">do</span> <span class="ot">done_file=</span><span class="st">"ready"</span>&gt;sbatch batchscript.sh&lt;/<span class="kw">do</span>&gt;</span></code></pre>
+<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>&lt;<span class="kw">do</span><span class="ot"> done_file=</span><span class="st">"ready"</span>&gt;sbatch batchscript.sh&lt;/<span class="kw">do</span>&gt;</span></code></pre>
 </div>
 </div>
 <div id="nav-tabpanel-1-YAML" class="tab-pane" aria-labelledby="nav-tab-1-YAML" role="tabpanel">
@@ -523,8 +525,8 @@ Running workpackages (#=done, 0=wait, E=error):
 ######################################################################</code></pre>
 </div>
 <p>Any workpackage with a pending <code>done_file</code> will be listed
-under <code>wait</code> in the table of open tasks. To try to advance
-any waiting workpackage the user needs to needs the
+under <code>wait</code> in the table of open tasks. In order to advance
+any waiting workpackage, the user needs to needs to use the
 <code>continue</code> command, as listed in the output given by
 JUBE.</p>
 <div class="codewrapper sourceCode" id="cb6">
@@ -567,7 +569,7 @@ Running workpackages (#=done, 0=wait, E=error):
 <h3 id="platform-independent-workflows">Platform-independent workflows<a class="anchor" aria-label="anchor" href="#platform-independent-workflows"></a></h3>
 <p>JUBE offers batch job templates compatible with a variety of batch
 systems that utilize this mechanism. These files are available in the
-JUBE installation directory unter <code>share/jube/platform</code>, with
+JUBE installation directory under <code>share/jube/platform</code>, with
 subdirectories per scheduler. Provided with version 2.7.1 of JUBE are
 files prepared for <strong>LSF</strong>, <strong>Moab</strong>,
 <strong>PBS</strong>, and <strong>SLURM</strong>.</p>
@@ -593,7 +595,7 @@ files readily available inside your workflow scripts.</p>
 </div>
 </div>
 </div>
-<p>Taking a look into the batch script template reveils the semingly
+<p>Taking a look into the batch script template reveals the seemingly
 automatic handling of generating either an <code>error</code> or a
 <code>ready</code> file as part of the batch job.</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -614,23 +616,23 @@ with the corresponding non-zero return code. At the end of the batch
 script, the substitution parameter #FLAG# will generate the specified
 file.</p>
 <p>If we take a look into the corresponding substitution set in
-<code>platform.xml</code>, we can see te following configuration.</p>
+<code>platform.xml</code>, we can see the following configuration.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>&lt;<span class="kw">sub</span> <span class="ot">source=</span><span class="st">"#FLAG#"</span> <span class="ot">dest=</span><span class="st">"touch $done_file"</span> /&gt;</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>&lt;<span class="kw">sub</span> <span class="ot">source=</span><span class="st">"#FLAG_ERROR#"</span> <span class="ot">dest=</span><span class="st">"touch $error_file"</span> /&gt;</span></code></pre>
+<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>&lt;<span class="kw">sub</span><span class="ot"> source=</span><span class="st">"#FLAG#"</span><span class="ot"> dest=</span><span class="st">"touch $done_file"</span> /&gt;</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>&lt;<span class="kw">sub</span><span class="ot"> source=</span><span class="st">"#FLAG_ERROR#"</span><span class="ot"> dest=</span><span class="st">"touch $error_file"</span> /&gt;</span></code></pre>
 </div>
-<p>as well as the corresponding the parameterset <code>executeset</code>
-in <code>platform.xml</code> contains the definition of
+<p>as well as the corresponding parameter set <code>executeset</code> in
+<code>platform.xml</code>, which contains the definition of
 <code>done_file</code> and <code>error_file</code>.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>&lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"done_file"</span>&gt;ready&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>&lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"error_file"</span>&gt;error&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
+<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"done_file"</span>&gt;ready&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>&lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"error_file"</span>&gt;error&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
-<p>Using these pre-defined sets in <code>platform.xml</code> in
+<p>Using these predefined sets in <code>platform.xml</code> in
 combination with the batch script template, we can easily create the
 <em>run</em> step for GROMACS.</p>
 <div class="tabs">
@@ -651,44 +653,44 @@ combination with the batch script template, we can easily create the
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>&lt;<span class="kw">parameterset</span> <span class="ot">name=</span><span class="st">"gromacs_run_pset"</span>&gt;</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_data_basedir"</span>&gt;${jube_benchmark_home}/data&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_data_file_prefix"</span>&gt;MD_${gromacs_domain_size_uc}_WATER&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_data_file"</span>&gt;${gromacs_data_basedir}/${gromacs_data_file_prefix}.tpr&lt;/<span class="kw">parameter</span>&gt;</span>
+<pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>&lt;<span class="kw">parameterset</span><span class="ot"> name=</span><span class="st">"gromacs_run_pset"</span>&gt;</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_data_basedir"</span>&gt;${jube_benchmark_home}/data&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_data_file_prefix"</span>&gt;MD_${gromacs_domain_size_uc}_WATER&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_data_file"</span>&gt;${gromacs_data_basedir}/${gromacs_data_file_prefix}.tpr&lt;/<span class="kw">parameter</span>&gt;</span>
 <span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>    <span class="co">&lt;!--  default data size is 'small' --&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_data_size"</span>&gt;small&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_data_size"</span>&gt;small&lt;/<span class="kw">parameter</span>&gt;</span>
 <span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>    <span class="co">&lt;!--  choose a specific data size via tag --&gt;</span></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_data_size"</span> <span class="ot">tag=</span><span class="st">"small"</span>&gt;small&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_data_size"</span> <span class="ot">tag=</span><span class="st">"medium"</span>&gt;medium&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_data_size"</span> <span class="ot">tag=</span><span class="st">"large"</span>&gt;large&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_data_size"</span><span class="ot"> tag=</span><span class="st">"small"</span>&gt;small&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_data_size"</span><span class="ot"> tag=</span><span class="st">"medium"</span>&gt;medium&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_data_size"</span><span class="ot"> tag=</span><span class="st">"large"</span>&gt;large&lt;/<span class="kw">parameter</span>&gt;</span>
 <span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>    <span class="co">&lt;!--  select the domain size via data size value --&gt;</span></span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_domain_size"</span> <span class="ot">mode=</span><span class="st">"python"</span>&gt;</span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_domain_size"</span><span class="ot"> mode=</span><span class="st">"python"</span>&gt;</span>
 <span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a>        {</span>
 <span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a>            "small":   "5nm",</span>
 <span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a>            "medium": "10nm",</span>
 <span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a>            "large" : "15nm"</span>
 <span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a>        }.get("${gromacs_data_size}")</span>
 <span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a>    &lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_domain_size_uc"</span>  <span class="ot">mode=</span><span class="st">"python"</span>&gt;"${gromacs_domain_size}".upper()&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"gromacs_timesteps"</span>&gt;10000&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_domain_size_uc"</span><span class="ot">  mode=</span><span class="st">"python"</span>&gt;"${gromacs_domain_size}".upper()&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"gromacs_timesteps"</span>&gt;10000&lt;/<span class="kw">parameter</span>&gt;</span>
 <span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a>&lt;/<span class="kw">parameterset</span>&gt;</span>
 <span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a></span>
-<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a>&lt;<span class="kw">parameterset</span> <span class="ot">name=</span><span class="st">"gromacs_system_pset"</span> <span class="ot">init_with=</span><span class="st">"platform.xml:systemParameter"</span>&gt;</span>
-<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"nodes"</span>&gt;1&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"taskspernode"</span>&gt;1&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"threadspertask"</span>&gt;24&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a>&lt;<span class="kw">parameterset</span><span class="ot"> name=</span><span class="st">"gromacs_system_pset"</span><span class="ot"> init_with=</span><span class="st">"platform.xml:systemParameter"</span>&gt;</span>
+<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"nodes"</span>&gt;1&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"taskspernode"</span>&gt;1&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"threadspertask"</span>&gt;24&lt;/<span class="kw">parameter</span>&gt;</span>
 <span id="cb12-27"><a href="#cb12-27" tabindex="-1"></a>&lt;/<span class="kw">parameterset</span>&gt;</span>
 <span id="cb12-28"><a href="#cb12-28" tabindex="-1"></a></span>
-<span id="cb12-29"><a href="#cb12-29" tabindex="-1"></a>&lt;<span class="kw">parameterset</span> <span class="ot">name=</span><span class="st">"gromacs_exec_pset"</span> <span class="ot">init_with=</span><span class="st">"platform.xml:executeset"</span>&gt;</span>
+<span id="cb12-29"><a href="#cb12-29" tabindex="-1"></a>&lt;<span class="kw">parameterset</span><span class="ot"> name=</span><span class="st">"gromacs_exec_pset"</span><span class="ot"> init_with=</span><span class="st">"platform.xml:executeset"</span>&gt;</span>
 <span id="cb12-30"><a href="#cb12-30" tabindex="-1"></a>&lt;/<span class="kw">parameterset</span>&gt;</span>
 <span id="cb12-31"><a href="#cb12-31" tabindex="-1"></a></span>
-<span id="cb12-32"><a href="#cb12-32" tabindex="-1"></a>&lt;<span class="kw">fileset</span> <span class="ot">name=</span><span class="st">"gromacs_input_files"</span>&gt;</span>
+<span id="cb12-32"><a href="#cb12-32" tabindex="-1"></a>&lt;<span class="kw">fileset</span><span class="ot"> name=</span><span class="st">"gromacs_input_files"</span>&gt;</span>
 <span id="cb12-33"><a href="#cb12-33" tabindex="-1"></a>    &lt;<span class="kw">copy</span>&gt;$gromacs_data_file&lt;/<span class="kw">copy</span>&gt;</span>
 <span id="cb12-34"><a href="#cb12-34" tabindex="-1"></a>&lt;/<span class="kw">fileset</span>&gt;</span>
 <span id="cb12-35"><a href="#cb12-35" tabindex="-1"></a></span>
-<span id="cb12-36"><a href="#cb12-36" tabindex="-1"></a>&lt;<span class="kw">substituteset</span> <span class="ot">name=</span><span class="st">"gromacs_exec_sub"</span> <span class="ot">init_with=</span><span class="st">"platform.xml:executesub"</span>&gt;</span>
-<span id="cb12-37"><a href="#cb12-37" tabindex="-1"></a>    &lt;<span class="kw">sub</span> <span class="ot">source=</span><span class="st">"#EXECUTABLE#"</span> <span class="ot">dest=</span><span class="st">"${gromacs_install_dir}/bin/gmx_mpi"</span> /&gt;</span>
-<span id="cb12-38"><a href="#cb12-38" tabindex="-1"></a>    &lt;<span class="kw">sub</span> <span class="ot">source=</span><span class="st">"#ARGS_EXECUTABLE#"</span> <span class="ot">dest=</span><span class="st">"mdrun -deffnm ${gromacs_data_file_prefix} -nsteps ${gromacs_timesteps}"</span> /&gt;</span>
+<span id="cb12-36"><a href="#cb12-36" tabindex="-1"></a>&lt;<span class="kw">substituteset</span><span class="ot"> name=</span><span class="st">"gromacs_exec_sub"</span><span class="ot"> init_with=</span><span class="st">"platform.xml:executesub"</span>&gt;</span>
+<span id="cb12-37"><a href="#cb12-37" tabindex="-1"></a>    &lt;<span class="kw">sub</span><span class="ot"> source=</span><span class="st">"#EXECUTABLE#"</span><span class="ot"> dest=</span><span class="st">"${gromacs_install_dir}/bin/gmx_mpi"</span> /&gt;</span>
+<span id="cb12-38"><a href="#cb12-38" tabindex="-1"></a>    &lt;<span class="kw">sub</span><span class="ot"> source=</span><span class="st">"#ARGS_EXECUTABLE#"</span><span class="ot"> dest=</span><span class="st">"mdrun -deffnm ${gromacs_data_file_prefix} -nsteps ${gromacs_timesteps}"</span> /&gt;</span>
 <span id="cb12-39"><a href="#cb12-39" tabindex="-1"></a>&lt;/<span class="kw">substituteset</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -756,7 +758,7 @@ combination with the batch script template, we can easily create the
 </div>
 </div>
 </div>
-<p>Using the indirecttion of the corresponding sets in the
+<p>Using the indirection of the corresponding sets in the
 <code>platform.xml</code> we now have a workflow specification that does
 not in itself reference any specific scheduler, as that is handled via
 the <code>JUBE_INCLUDE_PATH</code> from the shell JUBE is executed
@@ -839,7 +841,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.18.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.4" class="external-link">sandpaper (0.18.4)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -860,9 +862,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/jube-novice/instructor/run_step.html",
   "identifier": "https://carpentries-incubator.github.io/jube-novice/instructor/run_step.html",
-  "dateCreated": "2026-01-28",
-  "dateModified": "2025-05-22",
-  "datePublished": "2026-01-28"
+  "dateCreated": "2026-02-02",
+  "dateModified": "2026-02-02",
+  "datePublished": "2026-02-02"
 }
 
   </script><script>
