@@ -13,7 +13,7 @@ exercises: 5
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- List different mechanisms to include data from multiple configuration files.
+- List the different ways of including data from multiple configuration files.
 - Select an appropriate inclusion mechanism in different scenarios.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -115,12 +115,12 @@ step:
 
 ## Including arbitrary configuration data
 
-So far, we only reused set defined in external files.
-Howerver, JUBE also allows to include arbitrary parts of an external configuration file.
+So far, we only reused sets defined in external files.
+However, JUBE also allows to include arbitrary parts of an external configuration file.
 The external configuration file is even allowed to contain non-JUBE tags (e.g., to make it easier to identify a block of entities), as long as the included portion of the external configuration does not retain any unknown tags.
 
-The specifics of this is out of the scope for this tutorial at this stage, so please reffer to the
-[JUBE tutorial pages of the Jülich Supercomputing Centre][jube-tutorial] for more details on that.
+The specifics of this is out of the scope for this tutorial at this stage, so please refer to the
+[JUBE tutorial pages of the Jülich Supercomputing Centre][jube-adv-tutorial-ex-data] for more details on that.
 
 :::::::::::::::::::::::::::::::::::::: keypoints
 

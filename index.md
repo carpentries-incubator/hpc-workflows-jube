@@ -15,7 +15,8 @@ Before joining *Reproducible HPC workflows using JUBE*, participants should be a
 
 # Summary
 
-This course provides an introduction into the Jülich Benchmarking Environment (JUBE), a workflow management system created for running performance benchmarks on high-performance computing (HPC) systems. JUBE can also be used for general workflows involving running applications on HPC systems, and this course will further provide an example on how to run the molecular-dynamic code GROMACS and will discuss aspects of workflow reproducibility in JUBE.
+This lesson provides an introduction into the Jülich Benchmarking Environment (JUBE), a workflow management system created for running performance benchmarks on high-performance computing (HPC) systems.
+JUBE can also be used for general workflows involving running applications on HPC systems, and this course will further provide an example on how to run the molecular dynamics code GROMACS and will discuss aspects of workflow reproducibility in JUBE.
 
 :::::: callout
 ## 🚧 Under Construction 🚧
@@ -29,6 +30,6 @@ JUBE tutorial pages of the Jülich Supercomputing Centre][jube-tutorial].
 
 ::::::::::::::::::
 
-This is a lesson built with [The Carpentries Workbench][workbench].
+The lesson is built with [The Carpentries Workbench][workbench].
 
 

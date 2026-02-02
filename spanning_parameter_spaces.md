@@ -45,7 +45,7 @@ JUBE allows for values containing the `,` (comma) character by specifying the se
 ::::::
 :::
 
-If multiple parameters can be tokenized, each parameter will become a dimenson
+If multiple parameters can be tokenized, each parameter will become a dimension
 in the parameter space.
 Consider the following example with two parameters containing comma-separated
 values.

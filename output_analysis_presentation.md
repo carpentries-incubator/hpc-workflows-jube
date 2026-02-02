@@ -13,13 +13,13 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Generate regular expression patterns to analyse the output of a step.
+- Generate regular expression patterns to analyze the output of a step.
 - Generate a basic table from benchmark parameters and output.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::: prereq
-If you cannot execute GROMACS via the generated batch script to generate an output, you can down load an example error log [job.err](episodes/files/job.err) and place it in the work directory of your *run* stage (`jube_run/<id>/000002_run/work/`).
+If you cannot execute GROMACS via the generated batch script to generate an output, you can download an example error log [job.err](episodes/files/job.err) and place it in the work directory of your *run* stage (`jube_run/<id>/000002_run/work/`).
 Furthermore you need to let JUBE know that the execution was successful with the following command executed in the same directory.
 ```sh
 jube_run/<id>/000002_run/work/$ touch ready
@@ -48,7 +48,7 @@ Check the outputs in the corresponding workpackages and identify interesting out
 
 ::::::::::::::::::::::::
 
-Patterns are defines as [regular expressions][carpentries-regex] as part of a pattern set.
+Patterns are defined as [regular expressions][carpentries-regex] as part of a pattern set.
 When we take the following snippets from [`cmake_configure.log`](episodes/files/cmake_configure.log)
 
 ```output
@@ -62,7 +62,7 @@ When we take the following snippets from [`cmake_configure.log`](episodes/files/
 ...
 ```
 
-we can already identify some interesting information that are worth extracting.
+we can already identify some interesting pieces of information that are worth extracting.
 
 :::::::::::: group-tab
 ### XML
@@ -93,11 +93,11 @@ patternset:
 ```
 ::::::::::::::::::::::
 
-Each pattern can contain an arbitrary amount of wildcards, but must contain exactly one *matching* operator `()`, which defines the value of the pattern.
-JUBE also defines [several patterns](https://apps.fz-juelich.de/jsc/jube/docu/glossar.html#term-jube_pattern) for common elementar types such as numbers and individual words:
+Each pattern can contain an arbitrary number of wildcards, but must contain exactly one *matching* operator `()`, which determines the value of the pattern.
+JUBE also defines [several patterns](https://apps.fz-juelich.de/jsc/jube/docu/glossar.html#term-jube_pattern) for common elementary types such as numbers and individual words:
 
 - `$jube_pat_int`: integer number w/ matching operator
-- `$jube_pat_nint`: integer number w/o matchin operator
+- `$jube_pat_nint`: integer number w/o matching operator
 - `$jube_pat_fp`: floating point number w/ matching operator
 - `$jube_pat_nfp`: floating point number w/o matching operator
 - `$jube_pat_wrd`: word w/ matching operator
@@ -199,7 +199,7 @@ Without the definition of a result table, we cannot visualise this directly, but
 ```
 
 JUBE also tracks multiple matches per pattern and tracks it in "shadow" patterns with additional suffixes.
-You can find a more details description [in the JUBE Glossary under 'statistical values'](https://apps.fz-juelich.de/jsc/jube/docu/glossar.html#term-statistical_values).
+You can find a more detailed description [in the JUBE Glossary under 'statistical values'](https://apps.fz-juelich.de/jsc/jube/docu/glossar.html#term-statistical_values).
 For numerical statistics (e.g., min, max, avg, std) the pattern needs to be of **type** `int` or `float`.
 Also, a **unit** specified as a string can be stored with a pattern.
 
@@ -245,7 +245,7 @@ gromacs_build:
 
 
 :::::::::::: challenge
-Add an additional patternset, analyser and result definition to generate an additional table similar to the following:
+Add an additional pattern set, analyser and result definition to generate an additional table similar to the following:
 ```output
 gromacs_run:
 | wp | gromacs_core_time[s] | gromacs_wall_time[s] | gromacs_core_perf[ns/day] | gromacs_wall_perf[hours/ns] |
@@ -354,7 +354,7 @@ result:
 :::::::::::::::::::::
 
 ::::::::::::::::: callout
-Each table has a separate file in the `result/` directory with its *name* as is name and the extension `.dat`.
+Each table has a separate file in the `result/` directory with its *'name'* as its file name and the extension `.dat`.
 
 Tables can be either *pretty* printed or in *CSV* (comma-separated values) format. The latter being the default type.
 :::::::::::::::::::::::::
@@ -362,10 +362,10 @@ Tables can be either *pretty* printed or in *CSV* (comma-separated values) forma
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- JUBE allows for definition of patterns to retrieve values from a workflow
+- JUBE allows for the definition of patterns enabling the user to retrieve values from a workflow
   step.
-- Patterns can be defined as regular expressions or Python expressions.
-- JUBE allows for the generate of pretty-printed tables and CSV format.
+- Patterns can be defined as either regular expressions or Python expressions.
+- JUBE can generate pretty-printed and CSV-formatted tables.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

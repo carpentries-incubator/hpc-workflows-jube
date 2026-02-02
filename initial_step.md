@@ -13,7 +13,7 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Define an initial workflow.
-- Create the benchmarks systems description automatically.
+- Create the benchmark's systems description automatically.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -133,7 +133,7 @@ $ nano gromacs.xml
   </benchmark>
   <parameterset name="gromacs_pset">
     <parameter name="gromacs_version">2024.5</parameter>
-    <parameter name="gromacs_sources">gromacs-$gromacs_version</parameterrameter>
+    <parameter name="gromacs_sources">gromacs-$gromacs_version</parameter>
     <parameter name="gromacs_archive">$gromacs_sources.tar.gz</parameter>
     <parameter name="gromacs_baseurl">https://ftp.gromacs.org/gromacs/</parameter>
     <parameter name="gromacs_build_dir">build_$gromacs_sources</parameter>
@@ -205,7 +205,7 @@ Only deviate from this when you have a very strong argument to do so.
 Next to workflow-specific parameters defined by the workflow itself, JUBE also
 defines variables containing information about the current workflow run.
 These variables can be referenced just as any parameter defined as part of a
-parameterset.
+parameter set.
 One of these variables is `$jube_benchmark_home`, and it contains the absolute
 path to the location of the workflow specification.
 
@@ -215,12 +215,12 @@ Find a full list of internal variables set by JUBE in [the glossary of JUBE's do
 
 :::
 
-Using this variable, we can now define the the installation path outside of the
+Using this variable, we can now define the installation path outside of the
 directory structure referenced by `outpath`.
-However, as any paths outside of JUBE's run directory tree will be accessed
+However, any paths outside of JUBE's run directory tree will be accessed
 (and potentially written to) by multiple workflow runs.
 Therefore, you will need to take precautions not to overwrite installations
-accidentially.
+accidentally.
 
 
 ::: group-tab
@@ -307,14 +307,14 @@ When evaluated to `true`, the respective entity remains enabled (just as if no `
 
 To only build GROMACS, when no complete install is available, we need
 
-- an indicator that a previous install was successfull,
+- an indicator that a previous install was successful,
 - the evaluation of that indicator,
 - an expression to use as the value for the `active` attribute, and
 - add an action to remove any preexisting installation (that may be incomplete).
 
 For this purpose we add a final `do` action to the *build* step that creates a file indicating that this step was complete and, because of transitivity, all prior `do` actions completed successfully.
 Furthermore, we then create a `parameter` as part of the `gromacs_pset` that indicates the existence of the file in the target directory.
-We use a parameter here, because of it ease of use when checking for the existence of a file as part of a shell expresseion.
+We use a parameter here, because of it ease of use when checking for the existence of a file as part of a shell expression.
 This parameter can then be referenced in the appropriate `do` actions in the build step.
 
 
@@ -322,8 +322,8 @@ This parameter can then be referenced in the appropriate `do` actions in the bui
 
 - Group actions that belong together and have a 1:1 relation ship in a single
   step.
-- Basing parameter values on other parameter values can help code copy and
-  increase flexibility and maintainability of your workflow.
+- Basing parameter values on other parameter values avoids code duplication and
+  increases flexibility and maintainability of your workflow.
 - You can generate build files from templates using dynamic values from
   parameter sets.
 
