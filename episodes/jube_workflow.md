@@ -19,7 +19,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-JUBE workflows are started with the command `jube run <jube-spec>`.
+JUBE workflows are started with the command `jube run <jube-conf>`.
 The configuration file can be either an XML or a YAML file.
 
 A minimal configuration in XML contains the tags `<jube>` and `<benchmark>`.
@@ -229,7 +229,7 @@ In order to achieve this, the keyword 'use', referencing the name of a parameter
 Actions are defined using the `do` keyword and should be standard shell
 commands (including arguments).
 Parameters can be referenced using the `$` prefix to its name and are replaced
-by their respective value prior to the execution
+by their respective value prior to the execution.
 
 ::: group-tab
 
