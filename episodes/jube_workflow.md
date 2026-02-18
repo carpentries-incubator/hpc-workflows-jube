@@ -149,10 +149,10 @@ Let's define a minimal set of parameters for our initial *Hello World* example.
   <benchmark name="hello_world" outpath="bench_run">
     <comment>A simple workflow example</comment>
     <!-- further configuration goes here -->
+    <parameterset>
+      <parameter name="message">Hello World</parameter>
+    </parameterset>
   </benchmark>
-  <parameterset>
-    <parameter name="message">Hello World</parameter>
-  </parameterset>
 </jube>
 ```
 
@@ -241,14 +241,14 @@ You can download the full definition so far as [hello_world.xml](files/hello_wor
   <benchmark name="hello_world" outpath="bench_run">
     <comment>A simple workflow example</comment>
     <!-- further configuration goes here -->
+    <parameterset name="hello_pset">
+      <parameter name="message">Hello World</parameter>
+    </parameterset>
+    <step name="print_message">
+      <use>hello_pset</use>
+      <do>echo $message</do>
+    </step>
   </benchmark>
-  <parameterset name="hello_pset">
-    <parameter name="message">Hello World</parameter>
-  </parameterset>
-  <step name="print_message">
-    <use>hello_pset</use>
-    <do>echo $message</do>
-  </step>
 </jube>
 ```
 
