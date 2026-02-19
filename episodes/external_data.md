@@ -29,6 +29,7 @@ The simplest form of reusing external configuration data is to define a set in a
 ### XML
 ```sh
 $ nano external_config.xml
+```
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <jube>
@@ -53,6 +54,7 @@ $ nano main.xml
 ### YAML
 ```sh
 $ nano external_config.yaml
+```
 ```yaml
 parameterset:
   - name: numbers_pset
