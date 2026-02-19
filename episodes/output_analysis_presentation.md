@@ -19,7 +19,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::: prereq
-If you cannot execute GROMACS via the generated batch script to generate an output, you can download an example error log [job.err](episodes/files/job.err) and place it in the work directory of your *run* stage (`jube_run/<id>/000002_run/work/`).
+If you cannot execute GROMACS via the generated batch script to generate an output, you can download an example error log [job.err](episodes/files/job.err) and place it in the work directory of your *run* `step` (`jube_run/<id>/000002_run/work/`).
 Furthermore you need to let JUBE know that the execution was successful with the following command executed in the same directory.
 ```sh
 jube_run/<id>/000002_run/work/$ touch ready
@@ -34,7 +34,7 @@ JUBE provides an easy way for regular expressions to parse workflow output and s
 
 Patterns are defined as part of pattern sets that can be applied to specific files during analysis.
 As with parameters, the names of patterns need to be unique for the whole workflow.
-When included in result tables, their names can be shortened or changed completely to better fit the generated table.
+When included as a column in result tables, their names can be shortened or changed completely to better fit the generated table.
 
 
 :::::::::::::: challenge
@@ -48,7 +48,7 @@ Check the outputs in the corresponding workpackages and identify interesting out
 
 ::::::::::::::::::::::::
 
-Patterns are defined as [regular expressions][carpentries-regex] as part of a pattern set.
+Patterns are defined as [regular expressions][carpentries-regex] as part of a `patternset`.
 When we take the following snippets from [`cmake_configure.log`](episodes/files/cmake_configure.log)
 
 ```output
@@ -106,8 +106,8 @@ JUBE also defines [several patterns](https://apps.fz-juelich.de/jsc/jube/docu/gl
 
 
 ::::::::::::::: callout
-While all **steps** of a JUBE workflow need to be defined before the workflow is started and cannot be altered after that, patterns and result tables can be updated while the workflow is active and even after a workflow has completed.
-This enables an iterative approach for defining patterns and result tables for previously unknown output.
+While all `parametersets`, `filesets`, `substitutesets` and `steps` of a JUBE workflow need to be defined before the workflow is started and cannot be altered after that, `patterns`, `analyser` and `result` tables can be updated while the workflow is active and even after a workflow has completed.
+This enables an iterative approach for defining `patterns` and `result` tables for previously unknown output.
 :::::::::::::::::::::::
 
 To use the defined patterns, JUBE needs an `analyser` specifying which patterns to use for which file or which patterns to use globally.
@@ -133,7 +133,7 @@ result:
 ```
 :::::::::::::::::::::::::::
 
-We can then start and test the analyser with the `analyse` command.
+We can then start and test the analyser with the `jube analyse ...` command.
 However, as we modified the workflow configuration by adding new patterns and analyser definitions, we need to tell JUBE to update its information about the workflow. This can be done with the `-u` (for update) argument followed by the updated workflow specification.
 
 :::::::::::::: group-tab
@@ -156,8 +156,11 @@ $ jube analyse -u gromacs.yaml jube_run --id 35
 ######################################################################
 ```
 
-Without the definition of a result table, we cannot visualise this directly, but we can investigate the data storage given in the output and check which patterns were matched for which workpackage.
+Without the definition of a result table, we cannot visualise this directly, but we can investigate the data storage given in the output and check which patterns were matched for which workpackage. (Hint: In a future JUBE version the content of this file might be stored in a database.)
 
+```sh
+$ nano jube_run/000035/analyse.xml
+```
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <analyse>
@@ -199,14 +202,14 @@ Without the definition of a result table, we cannot visualise this directly, but
 ```
 
 JUBE also tracks multiple matches per pattern and tracks it in "shadow" patterns with additional suffixes.
-You can find a more detailed description [in the JUBE Glossary under 'statistical values'](https://apps.fz-juelich.de/jsc/jube/docu/glossar.html#term-statistical_values).
+You can find a more detailed description [in the JUBE Glossary under 'statistical values'](https://apps.fz-juelich.de/jsc/jube/docu/glossar.html#term-statistical_values) or [in JUBEs' the advanced tutorial](https://apps.fz-juelich.de/jsc/jube/docu/advanced.html#statistic-pattern-values).
 For numerical statistics (e.g., min, max, avg, std) the pattern needs to be of **type** `int` or `float`.
-Also, a **unit** specified as a string can be stored with a pattern.
+Also, a `unit` specified as a string can be stored with a `pattern` or `parameter`.
 
 
 ## Generating a result table
 
-With our first successful matches, we can now define our first result table for build-related information in a *result* specification.
+With our first successful matches, we can now define our first result table for build-related information in a `result` specification.
 
 :::::::::::::::::::: group-tab
 ### XML
@@ -214,11 +217,10 @@ With our first successful matches, we can now define our first result table for 
 <result>
   <use>gromacs_analyser</use>
   <table name="gromacs_build" style="pretty">
-        <column title="compiler">cmake_cxx_compiler_id</column>
-        <column title="compiler_version">cmake_cxx_compiler_version</column>
-        <column title="SIMD">SIMD_detected</column>
-        <column title="FFT">FFT_detected</column>
-    </table>
+    <column title="compiler">cmake_cxx_compiler_id</column>
+    <column title="compiler_version">cmake_cxx_compiler_version</column>
+    <column title="SIMD">SIMD_detected</column>
+    <column title="FFT">FFT_detected</column>
   </table>
 </result>
 ```
@@ -236,6 +238,9 @@ result:
         - { title: "FFT", _: FFT_detected }
 ```
 ::::::::::::::::::::::::::::::
+```sh
+$ jube result jube_run --id 35
+```
 ```output
 gromacs_build:
 |  compiler | compiler version |    SIMD |       FFT |
@@ -243,6 +248,10 @@ gromacs_build:
 | IntelLLVM |         2024.2.0 | AVX_512 | Intel MKL |
 ```
 
+The `analyse` and `result` commands can also be combined in a single call by using the `-a` or `--analyse` argument or the `jube result` command:
+```sh
+$ jube result jube_run -a --id 35
+```
 
 :::::::::::: challenge
 Add an additional pattern set, analyser and result definition to generate an additional table similar to the following:
@@ -259,46 +268,46 @@ The `wp` column references a JUBE variable identifying the *workpackage* of the 
 ### XML
 ```xml
 <patternset name="cmake_configure_patterns">
-    <pattern name="cmake_c_compiler_id">The C compiler identification is ([^ ]*)</pattern>
-    <pattern name="cmake_c_compiler_version">The C compiler identification is [^ ]* ([^ ]*)$</pattern>
-    <pattern name="cmake_cxx_compiler_id">The CXX compiler identification is ${jube_pat_wrd}</pattern>
-    <pattern name="cmake_cxx_compiler_version">The CXX compiler identification is ${jube_pat_nwrd} ${jube_pat_wrd}</pattern>
-    <pattern name="SIMD_detected">-- Detected best SIMD instructions for this CPU - ${jube_pat_wrd}</pattern>
-    <pattern name="SIMD_flags" dotall="false">-- Enabling.*SIMD instructions using CXX flags:$jube_pat_bl(.*)</pattern>
-    <pattern name="FFT_detected" dotall="false">-- Using external FFT library - (.*)$</pattern>
+  <pattern name="cmake_c_compiler_id">The C compiler identification is ([^ ]*)</pattern>
+  <pattern name="cmake_c_compiler_version">The C compiler identification is [^ ]* ([^ ]*)$</pattern>
+  <pattern name="cmake_cxx_compiler_id">The CXX compiler identification is ${jube_pat_wrd}</pattern>
+  <pattern name="cmake_cxx_compiler_version">The CXX compiler identification is ${jube_pat_nwrd} ${jube_pat_wrd}</pattern>
+  <pattern name="SIMD_detected">-- Detected best SIMD instructions for this CPU - ${jube_pat_wrd}</pattern>
+  <pattern name="SIMD_flags" dotall="false">-- Enabling.*SIMD instructions using CXX flags:$jube_pat_bl(.*)</pattern>
+  <pattern name="FFT_detected" dotall="false">-- Using external FFT library - (.*)$</pattern>
 </patternset>
 <patternset name="gromacs_output_patterns">
-    <pattern name="gromacs_num_procs" unit="s">Using ${jube_pat_int} MPI proc.*</pattern>
-    <pattern name="gromacs_num_threads" unit="s">Using ${jube_pat_int} OpenMP thread.*</pattern>
-    <pattern name="gromacs_core_time" unit="s">Time:\s*${jube_pat_fp}</pattern>
-    <pattern name="gromacs_wall_time" unit="s">Time:\s*${jube_pat_nfp}\s*${jube_pat_fp}</pattern>
-    <pattern name="gromacs_core_perf" unit="ns/day">Performance:\s*${jube_pat_fp}</pattern>
-    <pattern name="gromacs_wall_perf" unit="hours/ns">Performance:\s*${jube_pat_nfp}\s*${jube_pat_fp}</pattern>
+  <pattern name="gromacs_num_procs" unit="s">Using ${jube_pat_int} MPI proc.*</pattern>
+  <pattern name="gromacs_num_threads" unit="s">Using ${jube_pat_int} OpenMP thread.*</pattern>
+  <pattern name="gromacs_core_time" unit="s">Time:\s*${jube_pat_fp}</pattern>
+  <pattern name="gromacs_wall_time" unit="s">Time:\s*${jube_pat_nfp}\s*${jube_pat_fp}</pattern>
+  <pattern name="gromacs_core_perf" unit="ns/day">Performance:\s*${jube_pat_fp}</pattern>
+  <pattern name="gromacs_wall_perf" unit="hours/ns">Performance:\s*${jube_pat_nfp}\s*${jube_pat_fp}</pattern>
 </patternset>
 <analyser name="gromacs_analyser">
-    <analyse step="build">
-        <file use="cmake_configure_patterns">$gromacs_configure_log</file>
-    </analyse>
-    <analyse step="run">
-        <file use="gromacs_output_patterns">$errlogfile</file>
-    </analyse>
+  <analyse step="build">
+    <file use="cmake_configure_patterns">$gromacs_configure_log</file>
+  </analyse>
+  <analyse step="run">
+    <file use="gromacs_output_patterns">$errlogfile</file>
+  </analyse>
 </analyser>
 
 <result>
-    <use>gromacs_analyser</use>
-    <table name="gromacs_build" style="pretty">
-        <column title="compiler">cmake_cxx_compiler_id</column>
-        <column title="compiler_version">cmake_cxx_compiler_version</column>
-        <column title="SIMD">SIMD_detected</column>
-        <column title="FFT">FFT_detected</column>
-    </table>
-    <table name="gromacs_run" style="pretty">
-        <column title="wp">jube_wp_id</column>
-        <column>gromacs_core_time</column>
-        <column>gromacs_wall_time</column>
-        <column>gromacs_core_perf</column>
-        <column>gromacs_wall_perf</column>
-    </table>
+  <use>gromacs_analyser</use>
+  <table name="gromacs_build" style="pretty">
+    <column title="compiler">cmake_cxx_compiler_id</column>
+    <column title="compiler_version">cmake_cxx_compiler_version</column>
+    <column title="SIMD">SIMD_detected</column>
+    <column title="FFT">FFT_detected</column>
+  </table>
+  <table name="gromacs_run" style="pretty">
+    <column title="wp">jube_wp_id</column>
+    <column>gromacs_core_time</column>
+    <column>gromacs_wall_time</column>
+    <column>gromacs_core_perf</column>
+    <column>gromacs_wall_perf</column>
+  </table>
 </result>
 ```
 ### YAML
@@ -356,14 +365,15 @@ result:
 ::::::::::::::::: callout
 Each table has a separate file in the `result/` directory with its *'name'* as its file name and the extension `.dat`.
 
-Tables can be either *pretty* printed or in *CSV* (comma-separated values) format. The latter being the default type.
+Tables can be either *pretty* printed or in *CSV* (comma-separated values) format (`style`). The latter being the default type.
+
+Alternatively, JUBE also provides the option of storing the result data in an SQLite3 database (see JUBE Glossary)[https://apps.fz-juelich.de/jsc/jube/docu/glossar.html#term-database_tag].
 :::::::::::::::::::::::::
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- JUBE allows for the definition of patterns enabling the user to retrieve values from a workflow
-  step.
+- JUBE allows for the definition of patterns enabling the user to retrieve values from a workflow step.
 - Patterns can be defined as either regular expressions or Python expressions.
 - JUBE can generate pretty-printed and CSV-formatted tables.
 
