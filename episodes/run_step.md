@@ -100,12 +100,11 @@ Running workpackages (#=done, 0=wait, E=error):
 ```
 
 Any workpackage with a pending `done_file` will be listed under `wait` in the table of open tasks.
-In order to advance any waiting workpackage, the user needs to needs to use the `continue` command, as listed in the output given by JUBE.
+In order to advance any waiting workpackage, the user needs to needs to use the `jube continue <dir>` command, as listed in the output given by JUBE.
 
 ```sh
 $ jube continue jube_run --id 24
 ```
-```output
 ```output
 ######################################################################
 # benchmark: GROMACS
@@ -151,8 +150,11 @@ $ export JUBE_INCLUDE_PATH=/path/to/your/jube/base/share/jube/platform/slurm:$JU
 ```
 :::::::::::::::::::::::::
 
-Taking a look into the batch script template reveals the seemingly automatic handling of generating either an `error` or a `ready` file as part of the batch job.
+Taking a look into the batch script template `submit.job.in` reveals the seemingly automatic handling of generating either an `error` or a `ready` file as part of the batch job.
 
+```sh
+$ nano submit.job.in
+```
 ```sh
 ...
 JUBE_ERR_CODE=$?
@@ -163,22 +165,22 @@ fi
 ...
 #FLAG#
 ```
-If the return code is not 0 (zero), the action specified by the substitution parameter #FLAG_ERROR# is executed, and the script exits with the corresponding non-zero return code.
-At the end of the batch script, the substitution parameter #FLAG# will generate the specified file.
+If the return code is not 0 (zero), the action specified by the substitution parameter *#FLAG_ERROR#* is executed, and the script exits with the corresponding non-zero return code.
+At the end of the batch script, the substitution parameter *#FLAG#* will generate the specified file.
 
-If we take a look into the corresponding substitution set in `platform.xml`, we can see the following configuration.
+If we take a look into the corresponding `substituteset` in `platform.xml`, we can see the following configuration.
 ```xml
 <sub source="#FLAG#" dest="touch $done_file" />
 <sub source="#FLAG_ERROR#" dest="touch $error_file" />
 ```
-as well as the corresponding parameter set `executeset` in `platform.xml`, which contains the definition of
+as well as the corresponding `parameterset` named *executeset* in `platform.xml`, which contains the definition of
 `done_file` and `error_file`.
 ```xml
 <parameter name="done_file">ready</parameter>
 <parameter name="error_file">error</parameter>
 ```
 
-Using these predefined sets in `platform.xml` in combination with the batch script template, we can easily create the *run* step for GROMACS.
+Using these predefined sets in `platform.xml` in combination with the batch script template `submit.job.in`, we can easily create the *run* `step` for GROMACS.
 
 :::::::::::: group-tab
 ### XML

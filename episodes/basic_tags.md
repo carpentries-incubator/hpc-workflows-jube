@@ -63,11 +63,12 @@ lines in our parameter sets.
 ## Uniqueness of parameters
 
 Parameters in JUBE have to be globally unique.
-That means no two different parameter sets are allowed to define a parameter of
+That means no two different parametersets are allowed to define a parameter of
 the same name.
 
-However, if several parameter definitions for the same name exist, the last
-definition will determine the parameter's value during the workflow run.
+However, if several parameter definitions for the same name exist in a single
+parameterset, the last definition will determine the parameter's value during
+the workflow run.
 
 The following specification will result in the parameter `var` being assigned
 the value `two`.
@@ -122,8 +123,9 @@ specification. Consider the following parameter definitions:
 ```
 :::::::::::::
 
-When specified with `--tag a b`, the parameter will removed for that run, as
-the `!b` takes higher precedence over the `a`.
+When specified with `jube run <jube-conf> --tag a b` on the command line, the
+parameter will removed for that run, as the `!b` takes higher precedence over
+the `a`.
 
 
 ::: challenge

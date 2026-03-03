@@ -19,7 +19,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-JUBE workflows are started with the command `jube run <jube-spec>`.
+JUBE workflows are started with the command `jube run <jube-conf>`.
 The configuration file can be either an XML or a YAML file.
 
 A minimal configuration in XML contains the tags `<jube>` and `<benchmark>`.
@@ -149,10 +149,10 @@ Let's define a minimal set of parameters for our initial *Hello World* example.
   <benchmark name="hello_world" outpath="bench_run">
     <comment>A simple workflow example</comment>
     <!-- further configuration goes here -->
+    <parameterset>
+      <parameter name="message">Hello World</parameter>
+    </parameterset>
   </benchmark>
-  <parameterset>
-    <parameter name="message">Hello World</parameter>
-  </parameterset>
 </jube>
 ```
 
@@ -229,7 +229,7 @@ In order to achieve this, the keyword 'use', referencing the name of a parameter
 Actions are defined using the `do` keyword and should be standard shell
 commands (including arguments).
 Parameters can be referenced using the `$` prefix to its name and are replaced
-by their respective value prior to the execution
+by their respective value prior to the execution.
 
 ::: group-tab
 
@@ -241,14 +241,14 @@ You can download the full definition so far as [hello_world.xml](files/hello_wor
   <benchmark name="hello_world" outpath="bench_run">
     <comment>A simple workflow example</comment>
     <!-- further configuration goes here -->
+    <parameterset name="hello_pset">
+      <parameter name="message">Hello World</parameter>
+    </parameterset>
+    <step name="print_message">
+      <use>hello_pset</use>
+      <do>echo $message</do>
+    </step>
   </benchmark>
-  <parameterset name="hello_pset">
-    <parameter name="message">Hello World</parameter>
-  </parameterset>
-  <step name="print_message">
-    <use>hello_pset</use>
-    <do>echo $message</do>
-  </step>
 </jube>
 ```
 
