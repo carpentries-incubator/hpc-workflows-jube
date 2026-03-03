@@ -385,7 +385,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Working with JUBE</h1>
-        <p>Last updated on 2026-02-02 |
+        <p>Last updated on 2026-03-03 |
 
         <a href="https://github.com/carpentries-incubator/jube-novice/edit/main/episodes/jube_workflow.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -424,7 +424,7 @@
 </div>
 </div>
 <p>JUBE workflows are started with the command
-<code>jube run &lt;jube-spec&gt;</code>. The configuration file can be
+<code>jube run &lt;jube-conf&gt;</code>. The configuration file can be
 either an XML or a YAML file.</p>
 <p>A minimal configuration in XML contains the tags
 <code>&lt;jube&gt;</code> and <code>&lt;benchmark&gt;</code>.</p>
@@ -600,10 +600,10 @@ sets</em>. Let’s define a minimal set of parameters for our initial
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  &lt;<span class="kw">benchmark</span> <span class="ot">name=</span><span class="st">"hello_world"</span> <span class="ot">outpath=</span><span class="st">"bench_run"</span>&gt;</span>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>    &lt;<span class="kw">comment</span>&gt;A simple workflow example&lt;/<span class="kw">comment</span>&gt;</span>
 <span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>    <span class="co">&lt;!-- further configuration goes here --&gt;</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>  &lt;/<span class="kw">benchmark</span>&gt;</span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  &lt;<span class="kw">parameterset</span>&gt;</span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"message"</span>&gt;Hello World&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>  &lt;/<span class="kw">parameterset</span>&gt;</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>    &lt;<span class="kw">parameterset</span>&gt;</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>      &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"message"</span>&gt;Hello World&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>    &lt;/<span class="kw">parameterset</span>&gt;</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>  &lt;/<span class="kw">benchmark</span>&gt;</span>
 <span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>&lt;/<span class="kw">jube</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -709,7 +709,7 @@ parameter set, is needed in the step definition. Actions are defined
 using the <code>do</code> keyword and should be standard shell commands
 (including arguments). Parameters can be referenced using the
 <code>$</code> prefix to its name and are replaced by their respective
-value prior to the execution</p>
+value prior to the execution.</p>
 <div class="tabs">
 <nav><div id="nav-tab-4" class="nav nav-tabs" role="tablist">
 <button class="nav-link active" id="nav-tab-4-XML" name="XML" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-4-XML" type="button" role="tab" aria-controls="nav-tabpanel-4-XML" aria-selected="true">
@@ -734,14 +734,14 @@ value prior to the execution</p>
 <span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  &lt;<span class="kw">benchmark</span> <span class="ot">name=</span><span class="st">"hello_world"</span> <span class="ot">outpath=</span><span class="st">"bench_run"</span>&gt;</span>
 <span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>    &lt;<span class="kw">comment</span>&gt;A simple workflow example&lt;/<span class="kw">comment</span>&gt;</span>
 <span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>    <span class="co">&lt;!-- further configuration goes here --&gt;</span></span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>  &lt;/<span class="kw">benchmark</span>&gt;</span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>  &lt;<span class="kw">parameterset</span> <span class="ot">name=</span><span class="st">"hello_pset"</span>&gt;</span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>    &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"message"</span>&gt;Hello World&lt;/<span class="kw">parameter</span>&gt;</span>
-<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>  &lt;/<span class="kw">parameterset</span>&gt;</span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>  &lt;<span class="kw">step</span> <span class="ot">name=</span><span class="st">"print_message"</span>&gt;</span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>    &lt;<span class="kw">use</span>&gt;hello_pset&lt;/<span class="kw">use</span>&gt;</span>
-<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>    &lt;<span class="kw">do</span>&gt;echo $message&lt;/<span class="kw">do</span>&gt;</span>
-<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>  &lt;/<span class="kw">step</span>&gt;</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>    &lt;<span class="kw">parameterset</span> <span class="ot">name=</span><span class="st">"hello_pset"</span>&gt;</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>      &lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"message"</span>&gt;Hello World&lt;/<span class="kw">parameter</span>&gt;</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>    &lt;/<span class="kw">parameterset</span>&gt;</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>    &lt;<span class="kw">step</span> <span class="ot">name=</span><span class="st">"print_message"</span>&gt;</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>      &lt;<span class="kw">use</span>&gt;hello_pset&lt;/<span class="kw">use</span>&gt;</span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>      &lt;<span class="kw">do</span>&gt;echo $message&lt;/<span class="kw">do</span>&gt;</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>    &lt;/<span class="kw">step</span>&gt;</span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>  &lt;/<span class="kw">benchmark</span>&gt;</span>
 <span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a>&lt;/<span class="kw">jube</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -915,7 +915,7 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/jube-novice/instructor/jube_workflow.html",
   "identifier": "https://carpentries-incubator.github.io/jube-novice/instructor/jube_workflow.html",
   "dateCreated": "2026-03-03",
-  "dateModified": "2026-02-02",
+  "dateModified": "2026-03-03",
   "datePublished": "2026-03-03"
 }
 
