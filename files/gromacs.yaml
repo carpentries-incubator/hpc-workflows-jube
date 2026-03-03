@@ -125,7 +125,8 @@ result:
       column:
         - { title: "compiler", _: cmake_cxx_compiler_id }
         - { title: "compiler version", _:  cmake_cxx_compiler_version }
-        - { title: SIMD support", _: SIMD_}
+        - { title: "SIMD", _: SIMD_detected}
+        - { title: "FFT", _: FFT_detected}
     - name: gromacs_run
       style: pretty
       column:

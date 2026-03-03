@@ -58,7 +58,6 @@ $ nano gromacs.xml
   <benchmark name="GROMACS" outpath="bench_run">
     <comment>MD Simulation Workflow</comment>
     <!-- further configuration goes here -->
-
     <step name="prepare_sources">
       <do>mkdir -p sources</do>
       <do>wget https://ftp.gromacs.org/gromacs/gromacs-2024.5.tar.gz</do>
@@ -130,25 +129,25 @@ $ nano gromacs.xml
   <benchmark name="GROMACS" outpath="bench_run">
     <comment>MD Simulation Workflow</comment>
     <!-- further configuration goes here -->
+    <parameterset name="gromacs_pset">
+      <parameter name="gromacs_version">2024.5</parameter>
+      <parameter name="gromacs_sources">gromacs-$gromacs_version</parameter>
+      <parameter name="gromacs_archive">$gromacs_sources.tar.gz</parameter>
+      <parameter name="gromacs_baseurl">https://ftp.gromacs.org/gromacs/</parameter>
+      <parameter name="gromacs_build_dir">build_$gromacs_sources</parameter>
+      <parameter name="gromacs_install_dir">install/$gromacs_sources</parameter>
+    </parameterset>
+    <step name="prepare_sources">
+      <use>gromacs_pset</use>
+      <do>wget $gromacs_baseurl/$gromacs_archive</do>
+      <do>tar xzf $gromacs_archive</do>
+    </step>
+    <step name="build" depend="prepare_sources">
+      <do>cmake -S prepare_sources/$gromacs_sources/ -B $gromacs_build_dir -DGMX_MPI=ON</do>
+      <do>cmake --build $gromacs_build_dir --parallel 12</do>
+      <do>cmake --install $gromacs_build_dir --prefix</do>
+    </step>
   </benchmark>
-  <parameterset name="gromacs_pset">
-    <parameter name="gromacs_version">2024.5</parameter>
-    <parameter name="gromacs_sources">gromacs-$gromacs_version</parameter>
-    <parameter name="gromacs_archive">$gromacs_sources.tar.gz</parameter>
-    <parameter name="gromacs_baseurl">https://ftp.gromacs.org/gromacs/</parameter>
-    <parameter name="gromacs_build_dir">build_$gromacs_sources</parameter>
-    <parameter name="gromacs_install_dir">install/$gromacs_sources</parameter>
-  </parameterset>
-  <step name="prepare_sources">
-    <use>gromacs_pset</use>
-    <do>wget $gromacs_baseurl/$gromacs_archive</do>
-    <do>tar xzf $gromacs_archive</do>
-  </step>
-  <step name="build" depend="prepare_sources">
-    <do>cmake -S prepare_sources/$gromacs_sources/ -B $gromacs_build_dir -DGMX_MPI=ON</do>
-    <do>cmake --build $gromacs_build_dir --parallel 12</do>
-    <do>cmake --install $gromacs_build_dir --prefix</do>
-  </step>
 </jube>
 ```
 
@@ -236,28 +235,28 @@ $ nano gromacs.xml
   <benchmark name="GROMACS" outpath="bench_run">
     <comment>MD Simulation Workflow</comment>
     <!-- further configuration goes here -->
+    <parameterset name="gromacs_pset">
+      <parameter name="gromacs_version">2024.5</parameter>
+      <parameter name="gromacs_sources">gromacs-$gromacs_version</parameterrameter>
+      <parameter name="gromacs_archive">$gromacs_sources.tar.gz</parameter>
+      <parameter name="gromacs_source_dir">$jube_benchmark_home/source</parameter>
+      <parameter name="gromacs_baseurl">https://ftp.gromacs.org/gromacs/</parameter>
+      <parameter name="gromacs_build_dir">build_$gromacs_sources</parameter>
+      <parameter name="gromacs_install_dir">$jube_benchmark_home/$gromacs_sources</parameter>
+    </parameterset>
+    <step name="prepare_sources">
+      <use>gromacs_pset</use>
+      <do>mkdir -p $gromacs_source_dir</do>
+      <do work_dir="$gromacs_source_dir">wget $gromacs_baseurl/$gromacs_archive</do>
+      <do work_dir="$gromacs_source_dir">tar xzf $gromacs_archive</do>
+    </step>
+    <step name="build" depend="prepare_sources">
+      <do>cmake -S $gromacs_source_dir/$gromacs_sources/ -B $gromacs_build_dir -DGMX_MPI=ON &gt; cmake_configure.log</do>
+      <do>cmake --build $gromacs_build_dir --parallel 12 &gt; cmake_build.log</do>
+      <do>cmake --install $gromacs_build_dir --prefix &gt; cmake_install.log</do>
+      <do>touch $gromacs_install_dir/.install_complete</do>
+    </step>
   </benchmark>
-  <parameterset name="gromacs_pset">
-    <parameter name="gromacs_version">2024.5</parameter>
-    <parameter name="gromacs_sources">gromacs-$gromacs_version</parameterrameter>
-    <parameter name="gromacs_archive">$gromacs_sources.tar.gz</parameter>
-    <parameter name="gromacs_source_dir">$jube_benchmark_home/source</parameter>
-    <parameter name="gromacs_baseurl">https://ftp.gromacs.org/gromacs/</parameter>
-    <parameter name="gromacs_build_dir">build_$gromacs_sources</parameter>
-    <parameter name="gromacs_install_dir">$jube_benchmark_home/$gromacs_sources</parameter>
-  </parameterset>
-  <step name="prepare_sources">
-    <use>gromacs_pset</use>
-    <do>mkdir -p $gromacs_source_dir</do>
-    <do work_dir="$gromacs_source_dir">wget $gromacs_baseurl/$gromacs_archive</do>
-    <do work_dir="$gromacs_source_dir">tar xzf $gromacs_archive</do>
-  </step>
-  <step name="build" depend="prepare_sources">
-    <do>cmake -S $gromacs_source_dir/$gromacs_sources/ -B $gromacs_build_dir -DGMX_MPI=ON &gt; cmake_configure.log</do>
-    <do>cmake --build $gromacs_build_dir --parallel 12 &gt; cmake_build.log</do>
-    <do>cmake --install $gromacs_build_dir --prefix &gt; cmake_install.log</do>
-    <do>touch $gromacs_install_dir/.install_complete</do>
-  </step>
 </jube>
 ```
 

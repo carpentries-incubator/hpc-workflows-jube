@@ -52,7 +52,8 @@ could make your workflow reproducible.
 
 The key benefits of using JUBE are:
 
-- It enables systematic and reproducible benchmarks.
+- It enables benchmarks to be carried out systematically and reproducibly in a
+  standardised way.
 - It provides a flexible, script-based framework to set up tasks and control
   various aspects of the execution.
 - It allows for custom workflows that can adapt to different HPC platforms.
