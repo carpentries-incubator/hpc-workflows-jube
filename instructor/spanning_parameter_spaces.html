@@ -68,7 +68,7 @@
         </ul></div>
     </div>
   </div>
-  <hr></header><nav class="navbar navbar-expand-xl bottom-nav incubator" aria-label="Main Navigation"><div class="container-fluid nav-container">
+</header><nav class="navbar navbar-expand-xl bottom-nav incubator" aria-label="Main Navigation"><div class="container-fluid nav-container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="menu-title">Menu</span>
@@ -117,12 +117,8 @@
     -->
     <a id="search-button" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
-</nav><aside class="col-md-12 lesson-progress"><div style="width: 41%" class="percentage">
-    41%
-  </div>
-  <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="41" style="width: 41%">
-    </div>
+</nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
+    <div class="progress-bar incubator" role="progressbar" style="width: 41%" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">41%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -178,7 +174,7 @@
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
 
-            <hr></div><!--/div.mobile-row -->
+          </div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordion-chapters-toggle">
             <div class="accordion-item">
@@ -354,8 +350,8 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/basic_tags.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/using_templates.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="../instructor/basic_tags.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="../instructor/using_templates.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -368,7 +364,7 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
-      <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
+    </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Spanning parameter spaces</h1>
         <p>Last updated on 2026-02-02 |
 
@@ -437,14 +433,14 @@ parameters.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-XML" class="tab-pane show active" aria-labelledby="nav-tab-1-XML" role="tabpanel">
+<div id="nav-tabpanel-1-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-XML">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode xml" tabindex="0"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a>&lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"myparam"</span> <span class="ot">separator=</span><span class="st">";"</span>&gt;1,2,3,4&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-YAML" class="tab-pane" aria-labelledby="nav-tab-1-YAML" role="tabpanel">
+<div id="nav-tabpanel-1-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-YAML">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -473,7 +469,7 @@ two parameters containing comma-separated values.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-XML" class="tab-pane show active" aria-labelledby="nav-tab-2-XML" role="tabpanel">
+<div id="nav-tabpanel-2-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-XML">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -481,7 +477,7 @@ two parameters containing comma-separated values.</p>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a>&lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"threads"</span>&gt;1,2,4&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-2-YAML" class="tab-pane" aria-labelledby="nav-tab-2-YAML" role="tabpanel">
+<div id="nav-tabpanel-2-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-YAML">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -560,7 +556,7 @@ of the parameters based on others.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-XML" class="tab-pane show active" aria-labelledby="nav-tab-3-XML" role="tabpanel">
+<div id="nav-tabpanel-3-XML" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-XML">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">XML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -571,7 +567,7 @@ of the parameters based on others.</p>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>&lt;<span class="kw">parameter</span> <span class="ot">name=</span><span class="st">"threads_per_process"</span> <span class="ot">mode=</span><span class="st">"python"</span>&gt;int(${cores_per_node}/${processes})&lt;/<span class="kw">parameter</span>&gt;</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-3-YAML" class="tab-pane" aria-labelledby="nav-tab-3-YAML" role="tabpanel">
+<div id="nav-tabpanel-3-YAML" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-YAML">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -653,7 +649,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.0)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.1)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -674,9 +670,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/jube-novice/instructor/spanning_parameter_spaces.html",
   "identifier": "https://carpentries-incubator.github.io/jube-novice/instructor/spanning_parameter_spaces.html",
-  "dateCreated": "2026-03-03",
+  "dateCreated": "2026-05-26",
   "dateModified": "2026-02-02",
-  "datePublished": "2026-05-19"
+  "datePublished": "2026-05-26"
 }
 
   </script><script>
