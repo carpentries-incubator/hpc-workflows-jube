@@ -1,261 +1,261 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/01-introduction.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/01-introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/02-workflow.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/02-workflow.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/03-basic-tags.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/03-basic-tags.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/03-benchmark-example.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/03-benchmark-example.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/04-basic-tags.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/04-basic-tags.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/04-nas-benchmark-example.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/04-nas-benchmark-example.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/05-benchmark-initial-step.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/05-benchmark-initial-step.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/05-benchmark-setup.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/05-benchmark-setup.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/06-benchmark-build.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/06-benchmark-build.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/06-building-bt.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/06-building-bt.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/07-benchmark-run.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/07-benchmark-run.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/07-running-bt.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/07-running-bt.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/08-gathering-output.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/08-gathering-output.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/09-result-tables.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/09-result-tables.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/10-stage-iterations.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/10-stage-iterations.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/11-outlook.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/11-outlook.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/404.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/CODE_OF_CONDUCT.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/LICENSE.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/acknowledgements.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/acknowledgements.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/aio.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/basic_tags.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/basic_tags.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/benchmark_example.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/benchmark_example.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/build_step.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/build_step.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/external_data.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/external_data.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/gathering_output.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/gathering_output.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/images.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/index.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/initial_step.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/initial_step.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/01-introduction.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/01-introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/02-workflow.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/02-workflow.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/03-basic-tags.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/03-basic-tags.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/03-benchmark-example.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/03-benchmark-example.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/04-basic-tags.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/04-basic-tags.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/04-nas-benchmark-example.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/04-nas-benchmark-example.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/05-benchmark-initial-step.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/05-benchmark-initial-step.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/05-benchmark-setup.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/05-benchmark-setup.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/06-benchmark-build.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/06-benchmark-build.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/06-building-bt.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/06-building-bt.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/07-benchmark-run.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/07-benchmark-run.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/07-running-bt.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/07-running-bt.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/08-gathering-output.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/08-gathering-output.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/09-result-tables.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/09-result-tables.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/10-stage-iterations.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/10-stage-iterations.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/11-outlook.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/11-outlook.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/404.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/LICENSE.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/acknowledgements.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/acknowledgements.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/aio.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/basic_tags.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/basic_tags.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/benchmark_example.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/benchmark_example.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/build_step.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/build_step.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/external_data.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/external_data.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/gathering_output.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/gathering_output.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/images.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/index.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/initial_step.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/initial_step.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/instructor-notes.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/introduction.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/jube_workflow.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/jube_workflow.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/key-points.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/key-points.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/outlook.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/outlook.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/output_analysis_presentation.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/output_analysis_presentation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/profiles.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/profiles.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/reference.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/reference.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/reproducibility.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/reproducibility.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/result_tables.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/result_tables.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/run_step.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/run_step.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/spanning_parameter_spaces.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/spanning_parameter_spaces.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/stage_iterations.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/stage_iterations.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor/using_templates.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor/using_templates.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/instructor-notes.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/introduction.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/jube_workflow.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/jube_workflow.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/key-points.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/key-points.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/outlook.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/outlook.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/output_analysis_presentation.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/output_analysis_presentation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/profiles.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/profiles.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/reference.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/reference.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/reproducibility.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/reproducibility.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/result_tables.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/result_tables.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/run_step.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/run_step.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/spanning_parameter_spaces.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/spanning_parameter_spaces.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/stage_iterations.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/stage_iterations.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/jube-novice/using_templates.html</loc>
+    <loc>https://carpentries-incubator.github.io/hpc-workflows-jube/using_templates.html</loc>
   </url>
 </urlset>
